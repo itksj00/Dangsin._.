@@ -1,4 +1,203 @@
-<!DOCTYPE html>
+// Level 데이터 로드 (TOPIK 시험 출제 단어 - 한국어 중심)
+        function loadLevelData() {
+            levelData = {
+                1: [ // TOPIK II 3급 (중급 1) - 35개
+                    { id: 1, english: "environment", korean: "환경", pos: "noun", example: "우리는 환경을 보호해야 합니다.", korExample: "우리는 환경을 보호해야 합니다." },
+                    { id: 2, english: "society", korean: "사회", pos: "noun", example: "현대 사회는 빠르게 변화합니다.", korExample: "현대 사회는 빠르게 변화합니다." },
+                    { id: 3, english: "culture", korean: "문화", pos: "noun", example: "한국 문화는 매우 흥미롭습니다.", korExample: "한국 문화는 매우 흥미롭습니다." },
+                    { id: 4, english: "education", korean: "교육", pos: "noun", example: "교육은 매우 중요합니다.", korExample: "교육은 매우 중요합니다." },
+                    { id: 5, english: "health", korean: "건강", pos: "noun", example: "건강을 위해 운동을 합니다.", korExample: "건강을 위해 운동을 합니다." },
+                    { id: 6, english: "economy", korean: "경제", pos: "noun", example: "경제가 성장하고 있습니다.", korExample: "경제가 성장하고 있습니다." },
+                    { id: 7, english: "politics", korean: "정치", pos: "noun", example: "정치에 관심이 많습니다.", korExample: "정치에 관심이 많습니다." },
+                    { id: 8, english: "history", korean: "역사", pos: "noun", example: "역사를 공부하는 것이 좋습니다.", korExample: "역사를 공부하는 것이 좋습니다." },
+                    { id: 9, english: "technology", korean: "기술", pos: "noun", example: "기술이 발전하고 있습니다.", korExample: "기술이 발전하고 있습니다." },
+                    { id: 10, english: "science", korean: "과학", pos: "noun", example: "과학은 흥미로운 분야입니다.", korExample: "과학은 흥미로운 분야입니다." },
+                    { id: 11, english: "nature", korean: "자연", pos: "noun", example: "자연은 아름답습니다.", korExample: "자연은 아름답습니다." },
+                    { id: 12, english: "animal", korean: "동물", pos: "noun", example: "동물을 사랑합니다.", korExample: "동물을 사랑합니다." },
+                    { id: 13, english: "plant", korean: "식물", pos: "noun", example: "식물을 키우고 있습니다.", korExample: "식물을 키우고 있습니다." },
+                    { id: 14, english: "weather", korean: "날씨", pos: "noun", example: "오늘 날씨가 좋습니다.", korExample: "오늘 날씨가 좋습니다." },
+                    { id: 15, english: "season", korean: "계절", pos: "noun", example: "가을은 좋은 계절입니다.", korExample: "가을은 좋은 계절입니다." },
+                    { id: 16, english: "language", korean: "언어", pos: "noun", example: "언어를 배우는 것이 재미있습니다.", korExample: "언어를 배우는 것이 재미있습니다." },
+                    { id: 17, english: "literature", korean: "문학", pos: "noun", example: "문학 작품을 읽습니다.", korExample: "문학 작품을 읽습니다." },
+                    { id: 18, english: "art", korean: "예술", pos: "noun", example: "예술은 감동을 줍니다.", korExample: "예술은 감동을 줍니다." },
+                    { id: 19, english: "music", korean: "음악", pos: "noun", example: "음악을 듣는 것을 좋아합니다.", korExample: "음악을 듣는 것을 좋아합니다." },
+                    { id: 20, english: "sports", korean: "운동", pos: "noun", example: "매일 운동을 합니다.", korExample: "매일 운동을 합니다." },
+                    { id: 21, english: "food", korean: "음식", pos: "noun", example: "한국 음식이 맛있습니다.", korExample: "한국 음식이 맛있습니다." },
+                    { id: 22, english: "travel", korean: "여행", pos: "noun", example: "여행을 자주 갑니다.", korExample: "여행을 자주 갑니다." },
+                    { id: 23, english: "family", korean: "가족", pos: "noun", example: "가족과 시간을 보냅니다.", korExample: "가족과 시간을 보냅니다." },
+                    { id: 24, english: "friend", korean: "친구", pos: "noun", example: "친구를 만났습니다.", korExample: "친구를 만났습니다." },
+                    { id: 25, english: "neighbor", korean: "이웃", pos: "noun", example: "이웃과 인사를 나눴습니다.", korExample: "이웃과 인사를 나눴습니다." },
+                    { id: 26, english: "people", korean: "사람들", pos: "noun", example: "많은 사람들이 모였습니다.", korExample: "많은 사람들이 모였습니다." },
+                    { id: 27, english: "country", korean: "나라", pos: "noun", example: "우리 나라는 아름답습니다.", korExample: "우리 나라는 아름답습니다." },
+                    { id: 28, english: "city", korean: "도시", pos: "noun", example: "서울은 큰 도시입니다.", korExample: "서울은 큰 도시입니다." },
+                    { id: 29, english: "village", korean: "마을", pos: "noun", example: "작은 마을에 살고 있습니다.", korExample: "작은 마을에 살고 있습니다." },
+                    { id: 30, english: "mountain", korean: "산", pos: "noun", example: "주말에 산에 갑니다.", korExample: "주말에 산에 갑니다." },
+                    { id: 31, english: "river", korean: "강", pos: "noun", example: "강 옆에서 산책합니다.", korExample: "강 옆에서 산책합니다." },
+                    { id: 32, english: "sea", korean: "바다", pos: "noun", example: "바다를 보러 갔습니다.", korExample: "바다를 보러 갔습니다." },
+                    { id: 33, english: "sky", korean: "하늘", pos: "noun", example: "하늘이 맑습니다.", korExample: "하늘이 맑습니다." },
+                    { id: 34, english: "earth", korean: "지구", pos: "noun", example: "지구를 보호해야 합니다.", korExample: "지구를 보호해야 합니다." },
+                    { id: 35, english: "world", korean: "세계", pos: "noun", example: "세계를 여행하고 싶습니다.", korExample: "세계를 여행하고 싶습니다." }
+                ],
+                2: [ // TOPIK II 4급 (중급 2) - 35개
+                    { id: 1, english: "communicate", korean: "소통하다", pos: "verb", example: "We need to communicate better.", korExample: "우리는 더 잘 소통해야 합니다." },
+                    { id: 2, english: "experience", korean: "경험", pos: "noun", example: "This is a valuable experience.", korExample: "이것은 소중한 경험입니다." },
+                    { id: 3, english: "development", korean: "발전", pos: "noun", example: "The city shows rapid development.", korExample: "도시가 빠르게 발전하고 있습니다." },
+                    { id: 4, english: "research", korean: "연구", pos: "noun", example: "She conducts medical research.", korExample: "그녀는 의학 연구를 합니다." },
+                    { id: 5, english: "knowledge", korean: "지식", pos: "noun", example: "Knowledge is power.", korExample: "지식은 힘입니다." },
+                    { id: 6, english: "skill", korean: "기술", pos: "noun", example: "He has excellent skills.", korExample: "그는 뛰어난 기술을 가지고 있습니다." },
+                    { id: 7, english: "ability", korean: "능력", pos: "noun", example: "She has great ability.", korExample: "그녀는 훌륭한 능력을 가지고 있습니다." },
+                    { id: 8, english: "effort", korean: "노력", pos: "noun", example: "Success requires effort.", korExample: "성공에는 노력이 필요합니다." },
+                    { id: 9, english: "achievement", korean: "성취", pos: "noun", example: "This is a great achievement.", korExample: "이것은 큰 성취입니다." },
+                    { id: 10, english: "goal", korean: "목표", pos: "noun", example: "Set a clear goal.", korExample: "명확한 목표를 세우세요." },
+                    { id: 11, english: "purpose", korean: "목적", pos: "noun", example: "What is your purpose?", korExample: "당신의 목적은 무엇입니까?" },
+                    { id: 12, english: "plan", korean: "계획", pos: "noun", example: "Make a detailed plan.", korExample: "자세한 계획을 세우세요." },
+                    { id: 13, english: "method", korean: "방법", pos: "noun", example: "Find a good method.", korExample: "좋은 방법을 찾으세요." },
+                    { id: 14, english: "way", korean: "방식", pos: "noun", example: "There are many ways.", korExample: "여러 가지 방식이 있습니다." },
+                    { id: 15, english: "system", korean: "체계", pos: "noun", example: "This is a good system.", korExample: "이것은 좋은 체계입니다." },
+                    { id: 16, english: "organization", korean: "조직", pos: "noun", example: "Join our organization.", korExample: "우리 조직에 가입하세요." },
+                    { id: 17, english: "institution", korean: "기관", pos: "noun", example: "This is a public institution.", korExample: "이것은 공공 기관입니다." },
+                    { id: 18, english: "company", korean: "회사", pos: "noun", example: "I work for a company.", korExample: "저는 회사에서 일합니다." },
+                    { id: 19, english: "business", korean: "사업", pos: "noun", example: "He runs a business.", korExample: "그는 사업을 운영합니다." },
+                    { id: 20, english: "industry", korean: "산업", pos: "noun", example: "The tourism industry grows.", korExample: "관광 산업이 성장합니다." },
+                    { id: 21, english: "market", korean: "시장", pos: "noun", example: "Go to the market.", korExample: "시장에 가세요." },
+                    { id: 22, english: "price", korean: "가격", pos: "noun", example: "The price is reasonable.", korExample: "가격이 합리적입니다." },
+                    { id: 23, english: "value", korean: "가치", pos: "noun", example: "This has great value.", korExample: "이것은 큰 가치가 있습니다." },
+                    { id: 24, english: "quality", korean: "품질", pos: "noun", example: "Quality is important.", korExample: "품질이 중요합니다." },
+                    { id: 25, english: "quantity", korean: "수량", pos: "noun", example: "Check the quantity.", korExample: "수량을 확인하세요." },
+                    { id: 26, english: "amount", korean: "양", pos: "noun", example: "A large amount of water.", korExample: "많은 양의 물입니다." },
+                    { id: 27, english: "number", korean: "숫자", pos: "noun", example: "Write down the number.", korExample: "숫자를 적으세요." },
+                    { id: 28, english: "size", korean: "크기", pos: "noun", example: "What size do you need?", korExample: "어떤 크기가 필요하십니까?" },
+                    { id: 29, english: "shape", korean: "모양", pos: "noun", example: "The shape is round.", korExample: "모양이 둥급니다." },
+                    { id: 30, english: "color", korean: "색깔", pos: "noun", example: "I like this color.", korExample: "저는 이 색깔이 좋습니다." },
+                    { id: 31, english: "sound", korean: "소리", pos: "noun", example: "I hear a sound.", korExample: "소리가 들립니다." },
+                    { id: 32, english: "smell", korean: "냄새", pos: "noun", example: "Good smell of flowers.", korExample: "꽃의 좋은 냄새입니다." },
+                    { id: 33, english: "taste", korean: "맛", pos: "noun", example: "The taste is excellent.", korExample: "맛이 훌륭합니다." },
+                    { id: 34, english: "feeling", korean: "느낌", pos: "noun", example: "I have a good feeling.", korExample: "좋은 느낌이 듭니다." },
+                    { id: 35, english: "emotion", korean: "감정", pos: "noun", example: "Express your emotions.", korExample: "감정을 표현하세요." }
+                ],
+                3: [ // TOPIK II 4급 (중급 2) - 35개
+                    { id: 1, english: "thought", korean: "생각", pos: "noun", example: "Share your thoughts.", korExample: "당신의 생각을 나누세요." },
+                    { id: 2, english: "opinion", korean: "의견", pos: "noun", example: "What is your opinion?", korExample: "당신의 의견은 무엇입니까?" },
+                    { id: 3, english: "idea", korean: "아이디어", pos: "noun", example: "That's a good idea.", korExample: "그것은 좋은 아이디어입니다." },
+                    { id: 4, english: "mind", korean: "마음", pos: "noun", example: "Keep an open mind.", korExample: "열린 마음을 가지세요." },
+                    { id: 5, english: "heart", korean: "심장", pos: "noun", example: "Listen to your heart.", korExample: "당신의 심장 소리를 들으세요." },
+                    { id: 6, english: "spirit", korean: "정신", pos: "noun", example: "Strong spirit helps.", korExample: "강한 정신이 도움이 됩니다." },
+                    { id: 7, english: "soul", korean: "영혼", pos: "noun", example: "Music touches the soul.", korExample: "음악은 영혼을 터치합니다." },
+                    { id: 8, english: "body", korean: "몸", pos: "noun", example: "Take care of your body.", korExample: "몸을 돌보세요." },
+                    { id: 9, english: "face", korean: "얼굴", pos: "noun", example: "Wash your face.", korExample: "얼굴을 씻으세요." },
+                    { id: 10, english: "eye", korean: "눈", pos: "noun", example: "Close your eyes.", korExample: "눈을 감으세요." },
+                    { id: 11, english: "ear", korean: "귀", pos: "noun", example: "Listen with your ears.", korExample: "귀로 들으세요." },
+                    { id: 12, english: "nose", korean: "코", pos: "noun", example: "Your nose is red.", korExample: "당신의 코가 빨갛습니다." },
+                    { id: 13, english: "mouth", korean: "입", pos: "noun", example: "Open your mouth.", korExample: "입을 여세요." },
+                    { id: 14, english: "hand", korean: "손", pos: "noun", example: "Raise your hand.", korExample: "손을 드세요." },
+                    { id: 15, english: "foot", korean: "발", pos: "noun", example: "My foot hurts.", korExample: "제 발이 아픕니다." },
+                    { id: 16, english: "head", korean: "머리", pos: "noun", example: "My head aches.", korExample: "제 머리가 아픕니다." },
+                    { id: 17, english: "hair", korean: "머리카락", pos: "noun", example: "Cut your hair.", korExample: "머리카락을 자르세요." },
+                    { id: 18, english: "skin", korean: "피부", pos: "noun", example: "Protect your skin.", korExample: "피부를 보호하세요." },
+                    { id: 19, english: "bone", korean: "뼈", pos: "noun", example: "The bone is broken.", korExample: "뼈가 부러졌습니다." },
+                    { id: 20, english: "blood", korean: "피", pos: "noun", example: "Donate blood.", korExample: "피를 기부하세요." },
+                    { id: 21, english: "life", korean: "삶", pos: "noun", example: "Enjoy your life.", korExample: "당신의 삶을 즐기세요." },
+                    { id: 22, english: "death", korean: "죽음", pos: "noun", example: "Death is natural.", korExample: "죽음은 자연스러운 것입니다." },
+                    { id: 23, english: "birth", korean: "탄생", pos: "noun", example: "Celebrate the birth.", korExample: "탄생을 축하하세요." },
+                    { id: 24, english: "age", korean: "나이", pos: "noun", example: "What is your age?", korExample: "당신의 나이는 몇입니까?" },
+                    { id: 25, english: "time", korean: "시간", pos: "noun", example: "Time flies quickly.", korExample: "시간이 빠르게 흐릅니다." },
+                    { id: 26, english: "moment", korean: "순간", pos: "noun", example: "Enjoy this moment.", korExample: "이 순간을 즐기세요." },
+                    { id: 27, english: "period", korean: "기간", pos: "noun", example: "A long period of time.", korExample: "긴 기간입니다." },
+                    { id: 28, english: "hour", korean: "시", pos: "noun", example: "Wait for an hour.", korExample: "한 시간 기다리세요." },
+                    { id: 29, english: "minute", korean: "분", pos: "noun", example: "Five minutes left.", korExample: "5분 남았습니다." },
+                    { id: 30, english: "second", korean: "초", pos: "noun", example: "Just a second.", korExample: "잠깐만요." },
+                    { id: 31, english: "day", korean: "날", pos: "noun", example: "Have a good day.", korExample: "좋은 하루 보내세요." },
+                    { id: 32, english: "night", korean: "밤", pos: "noun", example: "Good night.", korExample: "좋은 밤 되세요." },
+                    { id: 33, english: "morning", korean: "아침", pos: "noun", example: "Good morning.", korExample: "좋은 아침입니다." },
+                    { id: 34, english: "afternoon", korean: "오후", pos: "noun", example: "In the afternoon.", korExample: "오후에요." },
+                    { id: 35, english: "evening", korean: "저녁", pos: "noun", example: "This evening is nice.", korExample: "이 저녁은 좋습니다." }
+                ],
+                4: [ // TOPIK II 5급 (고급 1) - 40개
+                    { id: 1, english: "yesterday", korean: "어제", pos: "noun", example: "I met him yesterday.", korExample: "어제 그를 만났습니다." },
+                    { id: 2, english: "today", korean: "오늘", pos: "noun", example: "Today is Monday.", korExample: "오늘은 월요일입니다." },
+                    { id: 3, english: "tomorrow", korean: "내일", pos: "noun", example: "See you tomorrow.", korExample: "내일 만나요." },
+                    { id: 4, english: "week", korean: "주", pos: "noun", example: "Next week is busy.", korExample: "다음 주는 바쁩니다." },
+                    { id: 5, english: "month", korean: "달", pos: "noun", example: "Last month was cold.", korExample: "지난달은 추웠습니다." },
+                    { id: 6, english: "year", korean: "해", pos: "noun", example: "Happy new year.", korExample: "새해 복 많이 받으세요." },
+                    { id: 7, english: "past", korean: "과거", pos: "noun", example: "Learn from the past.", korExample: "과거에서 배우세요." },
+                    { id: 8, english: "present", korean: "현재", pos: "noun", example: "Focus on the present.", korExample: "현재에 집중하세요." },
+                    { id: 9, english: "future", korean: "미래", pos: "noun", example: "Plan for the future.", korExample: "미래를 계획하세요." },
+                    { id: 10, english: "beginning", korean: "시작", pos: "noun", example: "The beginning is important.", korExample: "시작이 중요합니다." },
+                    { id: 11, english: "end", korean: "끝", pos: "noun", example: "Wait until the end.", korExample: "끝까지 기다리세요." },
+                    { id: 12, english: "start", korean: "출발", pos: "noun", example: "Ready for the start.", korExample: "출발 준비가 되었습니다." },
+                    { id: 13, english: "finish", korean: "완료", pos: "noun", example: "The finish line is near.", korExample: "완료 지점이 가깝습니다." },
+                    { id: 14, english: "change", korean: "변화", pos: "noun", example: "Change is necessary.", korExample: "변화는 필요합니다." },
+                    { id: 15, english: "growth", korean: "성장", pos: "noun", example: "Personal growth matters.", korExample: "개인적 성장이 중요합니다." },
+                    { id: 16, english: "progress", korean: "진보", pos: "noun", example: "We made progress.", korExample: "우리는 진보했습니다." },
+                    { id: 17, english: "improvement", korean: "개선", pos: "noun", example: "Show improvement.", korExample: "개선을 보여주세요." },
+                    { id: 18, english: "success", korean: "성공", pos: "noun", example: "Success takes time.", korExample: "성공은 시간이 걸립니다." },
+                    { id: 19, english: "failure", korean: "실패", pos: "noun", example: "Learn from failure.", korExample: "실패에서 배우세요." },
+                    { id: 20, english: "mistake", korean: "실수", pos: "noun", example: "Everyone makes mistakes.", korExample: "누구나 실수를 합니다." },
+                    { id: 21, english: "error", korean: "오류", pos: "noun", example: "Fix the error.", korExample: "오류를 고치세요." },
+                    { id: 22, english: "problem", korean: "문제", pos: "noun", example: "Solve the problem.", korExample: "문제를 해결하세요." },
+                    { id: 23, english: "solution", korean: "해결책", pos: "noun", example: "Find a solution.", korExample: "해결책을 찾으세요." },
+                    { id: 24, english: "answer", korean: "답", pos: "noun", example: "The answer is simple.", korExample: "답은 간단합니다." },
+                    { id: 25, english: "question", korean: "질문", pos: "noun", example: "Ask a question.", korExample: "질문하세요." },
+                    { id: 26, english: "reason", korean: "이유", pos: "noun", example: "What is the reason?", korExample: "이유가 무엇입니까?" },
+                    { id: 27, english: "cause", korean: "원인", pos: "noun", example: "Find the cause.", korExample: "원인을 찾으세요." },
+                    { id: 28, english: "result", korean: "결과", pos: "noun", example: "Check the result.", korExample: "결과를 확인하세요." },
+                    { id: 29, english: "effect", korean: "효과", pos: "noun", example: "The effect is positive.", korExample: "효과가 긍정적입니다." },
+                    { id: 30, english: "influence", korean: "영향", pos: "noun", example: "Under your influence.", korExample: "당신의 영향 아래입니다." },
+                    { id: 31, english: "power", korean: "힘", pos: "noun", example: "Power of love.", korExample: "사랑의 힘입니다." },
+                    { id: 32, english: "strength", korean: "강함", pos: "noun", example: "Show your strength.", korExample: "당신의 강함을 보여주세요." },
+                    { id: 33, english: "weakness", korean: "약점", pos: "noun", example: "Everyone has weakness.", korExample: "누구나 약점이 있습니다." },
+                    { id: 34, english: "advantage", korean: "이점", pos: "noun", example: "The advantage is clear.", korExample: "이점이 명확합니다." },
+                    { id: 35, english: "disadvantage", korean: "단점", pos: "noun", example: "Consider the disadvantage.", korExample: "단점을 고려하세요." },
+                    { id: 36, english: "benefit", korean: "혜택", pos: "noun", example: "Health benefits.", korExample: "건강 혜택입니다." },
+                    { id: 37, english: "loss", korean: "손실", pos: "noun", example: "Avoid the loss.", korExample: "손실을 피하세요." },
+                    { id: 38, english: "gain", korean: "이득", pos: "noun", example: "The gain is significant.", korExample: "이득이 상당합니다." },
+                    { id: 39, english: "profit", korean: "이익", pos: "noun", example: "Make a profit.", korExample: "이익을 내세요." },
+                    { id: 40, english: "damage", korean: "손상", pos: "noun", example: "Prevent damage.", korExample: "손상을 예방하세요." }
+                ],
+                5: [ // TOPIK II 5급 (고급 1) - 40개
+                    { id: 1, english: "danger", korean: "위험", pos: "noun", example: "Avoid danger.", korExample: "위험을 피하세요." },
+                    { id: 2, english: "safety", korean: "안전", pos: "noun", example: "Safety first.", korExample: "안전이 최우선입니다." },
+                    { id: 3, english: "risk", korean: "위험성", pos: "noun", example: "Take the risk.", korExample: "위험성을 감수하세요." },
+                    { id: 4, english: "chance", korean: "기회", pos: "noun", example: "A good chance.", korExample: "좋은 기회입니다." },
+                    { id: 5, english: "opportunity", korean: "기회", pos: "noun", example: "Great opportunity.", korExample: "훌륭한 기회입니다." },
+                    { id: 6, english: "possibility", korean: "가능성", pos: "noun", example: "There is possibility.", korExample: "가능성이 있습니다." },
+                    { id: 7, english: "necessity", korean: "필요성", pos: "noun", example: "The necessity is clear.", korExample: "필요성이 명확합니다." },
+                    { id: 8, english: "importance", korean: "중요성", pos: "noun", example: "Understand the importance.", korExample: "중요성을 이해하세요." },
+                    { id: 9, english: "meaning", korean: "의미", pos: "noun", example: "What is the meaning?", korExample: "의미가 무엇입니까?" },
+                    { id: 10, english: "significance", korean: "중요도", pos: "noun", example: "Historical significance.", korExample: "역사적 중요도입니다." },
+                    { id: 11, english: "purpose", korean: "목적", pos: "noun", example: "State your purpose.", korExample: "목적을 말하세요." },
+                    { id: 12, english: "function", korean: "기능", pos: "noun", example: "The function works.", korExample: "기능이 작동합니다." },
+                    { id: 13, english: "role", korean: "역할", pos: "noun", example: "Play your role.", korExample: "당신의 역할을 하세요." },
+                    { id: 14, english: "duty", korean: "의무", pos: "noun", example: "It is your duty.", korExample: "그것은 당신의 의무입니다." },
+                    { id: 15, english: "responsibility", korean: "책임", pos: "noun", example: "Take responsibility.", korExample: "책임을 지세요." },
+                    { id: 16, english: "right", korean: "권리", pos: "noun", example: "Human rights.", korExample: "인권입니다." },
+                    { id: 17, english: "freedom", korean: "자유", pos: "noun", example: "Freedom of speech.", korExample: "언론의 자유입니다." },
+                    { id: 18, english: "justice", korean: "정의", pos: "noun", example: "Fight for justice.", korExample: "정의를 위해 싸우세요." },
+                    { id: 19, english: "equality", korean: "평등", pos: "noun", example: "Gender equality.", korExample: "성 평등입니다." },
+                    { id: 20, english: "peace", korean: "평화", pos: "noun", example: "World peace.", korExample: "세계 평화입니다." },
+                    { id: 21, english: "war", korean: "전쟁", pos: "noun", example: "War is terrible.", korExample: "전쟁은 끔찍합니다." },
+                    { id: 22, english: "conflict", korean: "분쟁", pos: "noun", example: "Resolve the conflict.", korExample: "분쟁을 해결하세요." },
+                    { id: 23, english: "agreement", korean: "합의", pos: "noun", example: "Reach an agreement.", korExample: "합의에 도달하세요." },
+                    { id: 24, english: "contract", korean: "계약", pos: "noun", example: "Sign the contract.", korExample: "계약에 서명하세요." },
+                    { id: 25, english: "promise", korean: "약속", pos: "noun", example: "Keep your promise.", korExample: "약속을 지키세요." },
+                    { id: 26, english: "trust", korean: "신뢰", pos: "noun", example: "Build trust.", korExample: "신뢰를 쌓으세요." },
+                    { id: 27, english: "belief", korean: "믿음", pos: "noun", example: "Strong belief.", korExample: "강한 믿음입니다." },
+                    { id: 28, english: "faith", korean: "신념", pos: "noun", example: "Have faith.", korExample: "신념을 가지세요." },
+                    { id: 29, english: "hope", korean: "희망", pos: "noun", example: "Never lose hope.", korExample: "희망을 잃지 마세요." },
+                    { id: 30, english: "dream", korean: "꿈", pos: "noun", example: "Follow your dream.", korExample: "꿈을 따르세요." },
+                    { id: 31, english: "wish", korean: "소원", pos: "noun", example: "Make a wish.", korExample: "소원을 빌어요." },
+                    { id: 32, english: "desire", korean: "욕망", pos: "noun", example: "Strong desire.", korExample: "강한 욕망입니다." },
+                    { id: 33, english: "need", korean: "필요", pos: "noun", example: "Basic needs.", korExample: "기본 필요입니다." },
+                    { id: 34, english: "want", korean: "원함", pos: "noun", example: "What do you want?", korExample: "무엇을 원하십니까?" },
+                    { id: 35, english: "request", korean: "요청", pos: "noun", example: "Make a request.", korExample: "요청하세요." },
+                    { id: 36, english: "demand", korean: "요구", pos: "noun", example: "Meet the demand.", korExample: "요구를 충족하세요." },
+                    { id: 37, english: "supply", korean: "공급", pos: "noun", example: "Supply and demand.", korExample: "공급과 수요입니다." },
+                    { id: 38, english: "service", korean: "서비스", pos: "noun", example: "Customer service.", korExample: "고객 서비스입니다." },
+                    { id: 39, english: "product", korean: "제품", pos: "noun", example: "New product launch.", korExample: "신제품 출시입니다." },
+                    { id: 40, english: "material", korean: "재료", pos: "noun", example: "Raw materials.", korExample: "원자재입니다." }
+                ]
+            };
+        }<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -64,6 +263,11 @@
             font-size: 1.5em;
             color: #333;
             margin-bottom: 15px;
+        }
+
+        .level-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
         }
 
         .mode-buttons {
@@ -429,7 +633,7 @@
     <div class="container">
         <div class="header">
             <h1>🦐 Shrimp</h1>
-            <p>단계별 영어 단어 학습</p>
+            <p>당신을 위한 나의 마음</p>
         </div>
 
         <!-- Level Selection Screen -->
@@ -478,6 +682,7 @@
                             <div class="feedback" id="tpFeedback"></div>
                             <div class="action-buttons">
                                 <button class="action-btn next" id="tpSubmitBtn" onclick="submitTypingPractice()">제출</button>
+                                <button class="action-btn next" id="tpNextBtn" onclick="nextTPQuestion()" style="display:none;">다음</button>
                             </div>
                         </div>
                     </div>
@@ -722,6 +927,8 @@
         function renderLevelSelection() {
             const levelGrid = document.getElementById('levelGrid');
             levelGrid.innerHTML = '';
+            
+            const levelIcons = ['🐱', '👸', '🐺', '☕', '⚡'];
 
             for (let i = 1; i <= 5; i++) {
                 const levelInfo = window.progress.levels[i];
@@ -748,6 +955,7 @@
                 }
 
                 card.innerHTML = `
+                    <div class="level-icon">${levelIcons[i-1]}</div>
                     <div class="level-title">Level ${i}</div>
                     <div class="mode-buttons">
                         <button class="mode-btn mc" ${isUnlocked ? '' : 'disabled'} onclick="startMode(${i}, 'mc')">
@@ -809,7 +1017,7 @@
             const question = currentQuestions[currentQuestionIndex];
             document.getElementById('mcPosLabel').textContent = `(${question.pos})`;
             document.getElementById('koreanWord').textContent = question.korean;
-            document.getElementById('mcExampleSentence').textContent = `"${question.example}"`;
+            document.getElementById('mcExampleSentence').textContent = `"${question.korExample}"`;
 
             // 보기 생성 (정답 + 3개 오답)
             const answers = [question.english];
@@ -833,32 +1041,49 @@
             });
 
             updateProgress();
+            
+            // Enter 키로 다음 문제 넘기기
+            document.addEventListener('keydown', handleMCEnter);
+        }
+
+        function handleMCEnter(e) {
+            if (e.key === 'Enter' && !document.getElementById('mcNextBtn').disabled) {
+                nextMCQuestion();
+            }
         }
 
         // MC 답변 선택
         function selectMCAnswer(selected, correct, idx) {
-            if (answered) return;
-            answered = true;
-
             const isCorrect = selected === correct;
-            if (isCorrect) score++;
+            
+            if (!answered && isCorrect) {
+                answered = true;
+                score++;
+            }
 
             const choiceBtns = document.querySelectorAll('.choice-btn');
-            choiceBtns.forEach((btn, i) => {
-                btn.disabled = true;
-                if (i === idx) {
-                    btn.classList.add('selected', isCorrect ? 'correct' : 'incorrect');
-                }
-            });
+            choiceBtns[idx].classList.add('selected', isCorrect ? 'correct' : 'incorrect');
 
-            const feedback = document.getElementById('mcFeedback');
-            feedback.textContent = isCorrect ? '✓ 정답입니다!' : `✗ 오답입니다. 정답: ${correct}`;
-            feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
-            document.getElementById('mcNextBtn').disabled = false;
+            if (isCorrect) {
+                choiceBtns.forEach(btn => btn.disabled = true);
+                const feedback = document.getElementById('mcFeedback');
+                feedback.textContent = '✓ 정답입니다!';
+                feedback.classList.add('show', 'correct');
+                document.getElementById('mcNextBtn').disabled = false;
+            } else {
+                const feedback = document.getElementById('mcFeedback');
+                feedback.textContent = '✗ 다시 선택해주세요.';
+                feedback.classList.add('show', 'incorrect');
+                setTimeout(() => {
+                    choiceBtns[idx].classList.remove('selected', 'incorrect');
+                    feedback.classList.remove('show', 'incorrect');
+                }, 800);
+            }
         }
 
         // MC 다음 문제
         function nextMCQuestion() {
+            document.removeEventListener('keydown', handleMCEnter);
             currentQuestionIndex++;
             if (currentQuestionIndex >= currentQuestions.length) {
                 showResultModal();
@@ -877,6 +1102,12 @@
             answered = false;
             document.getElementById('tpFeedback').classList.remove('show', 'correct', 'incorrect');
             document.getElementById('tpSubmitBtn').disabled = false;
+            document.getElementById('tpSubmitBtn').style.display = 'inline-block';
+            
+            const tpNextBtn = document.getElementById('tpNextBtn');
+            if (tpNextBtn) {
+                tpNextBtn.style.display = 'none';
+            }
 
             const question = currentQuestions[currentQuestionIndex];
             document.getElementById('posLabel').textContent = `(${question.pos})`;
@@ -886,33 +1117,45 @@
             // 입력 박스 생성
             const inputBoxes = document.getElementById('inputBoxes');
             inputBoxes.innerHTML = '';
+            
             for (let i = 0; i < question.korean.length; i++) {
                 const input = document.createElement('input');
                 input.type = 'text';
                 input.className = 'input-box';
                 input.dataset.index = i;
+                input.maxLength = 1;
                 
-                // 한글 조합 완료 시에만 다음 박스로 이동
-                input.addEventListener('input', (e) => {
+                let composing = false;
+                
+                // 한글 조합 시작
+                input.addEventListener('compositionstart', () => {
+                    composing = true;
+                });
+                
+                // 한글 조합 종료
+                input.addEventListener('compositionend', (e) => {
+                    composing = false;
                     const value = e.target.value;
-                    // 완전한 한글 한 글자가 입력되었는지 확인
-                    if (value.length === 1 && /[가-힣]/.test(value)) {
-                        if (i < question.korean.length - 1) {
+                    if (value.length === 1 && i < question.korean.length - 1) {
+                        setTimeout(() => {
                             inputBoxes.children[i + 1].focus();
-                        }
+                        }, 0);
                     }
                 });
 
                 input.addEventListener('keydown', (e) => {
                     if (e.key === 'Backspace') {
-                        e.preventDefault();
-                        input.value = '';
-                        if (i > 0) {
+                        if (input.value === '' && i > 0) {
+                            e.preventDefault();
                             inputBoxes.children[i - 1].focus();
                         }
                     } else if (e.key === 'Enter') {
                         e.preventDefault();
-                        submitTypingPractice();
+                        if (document.getElementById('tpSubmitBtn').style.display !== 'none') {
+                            submitTypingPractice();
+                        } else {
+                            nextTPQuestion();
+                        }
                     }
                 });
 
@@ -951,12 +1194,9 @@
             feedback.textContent = isCorrect ? '✓ 정답입니다!' : `✗ 오답입니다. 정답: ${question.korean}`;
             feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
 
-            document.getElementById('tpSubmitBtn').disabled = true;
-            
-            // 1초 후 자동으로 다음 문제로 이동
-            setTimeout(() => {
-                nextTPQuestion();
-            }, 1500);
+            document.getElementById('tpSubmitBtn').style.display = 'none';
+            document.getElementById('tpNextBtn').style.display = 'inline-block';
+            document.getElementById('tpNextBtn').disabled = false;
         }
 
         // TP 다음 문제
@@ -971,12 +1211,19 @@
 
         // 결과 모달 표시
         function showResultModal() {
-            const passScore = 27; // 30문제 중 27문제 이상
             const totalQuestions = currentQuestions.length;
+            const passScore = Math.ceil(totalQuestions * 0.9); // 90% 이상
             const isPassed = score >= passScore;
             const percentage = Math.round((score / totalQuestions) * 100);
 
-            document.getElementById('resultTitle').textContent = isPassed ? '축하합니다! 🎉' : '다시 시도해주세요 📝';
+            let resultTitle = '';
+            if (isPassed) {
+                resultTitle = currentMode === 'mc' ? 'Schönen Tag 🎉' : 'Tschüssikowski! 🎊';
+            } else {
+                resultTitle = '다시 시도해주세요 📝';
+            }
+
+            document.getElementById('resultTitle').textContent = resultTitle;
             document.getElementById('resultScore').textContent = `${score} / ${totalQuestions}`;
             document.getElementById('resultMessage').textContent = `정답률: ${percentage}% ${isPassed ? '통과했습니다!' : '통과하지 못했습니다.'}`;
 
@@ -998,8 +1245,10 @@
 
             // 레벨 클리어 확인 및 축하 메시지
             const levelInfo = window.progress.levels[currentLevel];
-            if (levelInfo.mcPassed && levelInfo.tpPassed && isPassed) {
-                // 방금 레벨을 완료한 경우에만 표시
+            const previousMCPassed = currentMode === 'tp' && levelInfo.mcPassed;
+            const previousTPPassed = currentMode === 'mc' && levelInfo.tpPassed;
+            
+            if (levelInfo.mcPassed && levelInfo.tpPassed && isPassed && (previousMCPassed || previousTPPassed)) {
                 setTimeout(() => {
                     alert('갈채! 해냈어 애기! 기특해. 공부도 중요하지만 당신을 항상 아껴주기! 🦐💖');
                 }, 500);
