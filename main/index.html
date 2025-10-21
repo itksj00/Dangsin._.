@@ -1272,6 +1272,13 @@ function loadLevelData() {
             }
         }
 
+        function handleTPNextKey(e) {
+            if (e.key !== 'Enter') return;
+            e.preventDefault();
+            // 버튼에 Enter가 눌렸을 때 다음으로 이동
+            nextTPQuestion();
+        }
+
         function displayTPQuestion() {
             if (currentQuestionIndex >= currentQuestions.length) {
                 showResultModal();
@@ -1288,7 +1295,9 @@ function loadLevelData() {
             
             const tpNextBtn = document.getElementById('tpNextBtn');
             if (tpNextBtn) {
+                // 다음 버튼이 있는 경우 이전에 붙여둔 키핸들러 제거하고 숨김
                 tpNextBtn.style.display = 'none';
+                tpNextBtn.removeEventListener('keydown', handleTPNextKey);
             }
 
             const question = currentQuestions[currentQuestionIndex];
@@ -1408,12 +1417,21 @@ function loadLevelData() {
                 tpNextBtn.disabled = false;
                 // 포커스 이동: 사용자가 Enter로 다음을 누를 수 있게 함
                 tpNextBtn.focus();
+                // Enter를 안정적으로 인식하도록 버튼에 keydown 핸들러 직접 연결
+                tpNextBtn.removeEventListener('keydown', handleTPNextKey);
+                tpNextBtn.addEventListener('keydown', handleTPNextKey);
             }
         }
 
         function nextTPQuestion() {
             // remove TP global handler to avoid duplicates
             document.removeEventListener('keydown', handleTPEnter);
+
+            // 버튼에 붙어있을 수 있는 키핸들러도 제거
+            const tpNextBtn = document.getElementById('tpNextBtn');
+            if (tpNextBtn) {
+                tpNextBtn.removeEventListener('keydown', handleTPNextKey);
+            }
 
             currentQuestionIndex++;
             if (currentQuestionIndex >= currentQuestions.length) {
