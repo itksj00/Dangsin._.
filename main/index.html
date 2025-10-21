@@ -1,301 +1,1286 @@
-<!DOCTYPE html>
+// Level 데이터 로드 (TOPIK 시험 출제 단어 - 한국어 중심)
+        function loadLevelData() {
+            levelData = {
+                1: [ // TOPIK II 3급 (중급 1) - 35개
+                    { id: 1, english: "environment", korean: "환경", pos: "noun", example: "우리는 환경을 보호해야 합니다.", korExample: "우리는 환경을 보호해야 합니다." },
+                    { id: 2, english: "society", korean: "사회", pos: "noun", example: "현대 사회는 빠르게 변화합니다.", korExample: "현대 사회는 빠르게 변화합니다." },
+                    { id: 3, english: "culture", korean: "문화", pos: "noun", example: "한국 문화는 매우 흥미롭습니다.", korExample: "한국 문화는 매우 흥미롭습니다." },
+                    { id: 4, english: "education", korean: "교육", pos: "noun", example: "교육은 매우 중요합니다.", korExample: "교육은 매우 중요합니다." },
+                    { id: 5, english: "health", korean: "건강", pos: "noun", example: "건강을 위해 운동을 합니다.", korExample: "건강을 위해 운동을 합니다." },
+                    { id: 6, english: "economy", korean: "경제", pos: "noun", example: "경제가 성장하고 있습니다.", korExample: "경제가 성장하고 있습니다." },
+                    { id: 7, english: "politics", korean: "정치", pos: "noun", example: "정치에 관심이 많습니다.", korExample: "정치에 관심이 많습니다." },
+                    { id: 8, english: "history", korean: "역사", pos: "noun", example: "역사를 공부하는 것이 좋습니다.", korExample: "역사를 공부하는 것이 좋습니다." },
+                    { id: 9, english: "technology", korean: "기술", pos: "noun", example: "기술이 발전하고 있습니다.", korExample: "기술이 발전하고 있습니다." },
+                    { id: 10, english: "science", korean: "과학", pos: "noun", example: "과학은 흥미로운 분야입니다.", korExample: "과학은 흥미로운 분야입니다." },
+                    { id: 11, english: "nature", korean: "자연", pos: "noun", example: "자연은 아름답습니다.", korExample: "자연은 아름답습니다." },
+                    { id: 12, english: "animal", korean: "동물", pos: "noun", example: "동물을 사랑합니다.", korExample: "동물을 사랑합니다." },
+                    { id: 13, english: "plant", korean: "식물", pos: "noun", example: "식물을 키우고 있습니다.", korExample: "식물을 키우고 있습니다." },
+                    { id: 14, english: "weather", korean: "날씨", pos: "noun", example: "오늘 날씨가 좋습니다.", korExample: "오늘 날씨가 좋습니다." },
+                    { id: 15, english: "season", korean: "계절", pos: "noun", example: "가을은 좋은 계절입니다.", korExample: "가을은 좋은 계절입니다." },
+                    { id: 16, english: "language", korean: "언어", pos: "noun", example: "언어를 배우는 것이 재미있습니다.", korExample: "언어를 배우는 것이 재미있습니다." },
+                    { id: 17, english: "literature", korean: "문학", pos: "noun", example: "문학 작품을 읽습니다.", korExample: "문학 작품을 읽습니다." },
+                    { id: 18, english: "art", korean: "예술", pos: "noun", example: "예술은 감동을 줍니다.", korExample: "예술은 감동을 줍니다." },
+                    { id: 19, english: "music", korean: "음악", pos: "noun", example: "음악을 듣는 것을 좋아합니다.", korExample: "음악을 듣는 것을 좋아합니다." },
+                    { id: 20, english: "sports", korean: "운동", pos: "noun", example: "매일 운동을 합니다.", korExample: "매일 운동을 합니다." },
+                    { id: 21, english: "food", korean: "음식", pos: "noun", example: "한국 음식이 맛있습니다.", korExample: "한국 음식이 맛있습니다." },
+                    { id: 22, english: "travel", korean: "여행", pos: "noun", example: "여행을 자주 갑니다.", korExample: "여행을 자주 갑니다." },
+                    { id: 23, english: "family", korean: "가족", pos: "noun", example: "가족과 시간을 보냅니다.", korExample: "가족과 시간을 보냅니다." },
+                    { id: 24, english: "friend", korean: "친구", pos: "noun", example: "친구를 만났습니다.", korExample: "친구를 만났습니다." },
+                    { id: 25, english: "neighbor", korean: "이웃", pos: "noun", example: "이웃과 인사를 나눴습니다.", korExample: "이웃과 인사를 나눴습니다." },
+                    { id: 26, english: "people", korean: "사람들", pos: "noun", example: "많은 사람들이 모였습니다.", korExample: "많은 사람들이 모였습니다." },
+                    { id: 27, english: "country", korean: "나라", pos: "noun", example: "우리 나라는 아름답습니다.", korExample: "우리 나라는 아름답습니다." },
+                    { id: 28, english: "city", korean: "도시", pos: "noun", example: "서울은 큰 도시입니다.", korExample: "서울은 큰 도시입니다." },
+                    { id: 29, english: "village", korean: "마을", pos: "noun", example: "작은 마을에 살고 있습니다.", korExample: "작은 마을에 살고 있습니다." },
+                    { id: 30, english: "mountain", korean: "산", pos: "noun", example: "주말에 산에 갑니다.", korExample: "주말에 산에 갑니다." },
+                    { id: 31, english: "river", korean: "강", pos: "noun", example: "강 옆에서 산책합니다.", korExample: "강 옆에서 산책합니다." },
+                    { id: 32, english: "sea", korean: "바다", pos: "noun", example: "바다를 보러 갔습니다.", korExample: "바다를 보러 갔습니다." },
+                    { id: 33, english: "sky", korean: "하늘", pos: "noun", example: "하늘이 맑습니다.", korExample: "하늘이 맑습니다." },
+                    { id: 34, english: "earth", korean: "지구", pos: "noun", example: "지구를 보호해야 합니다.", korExample: "지구를 보호해야 합니다." },
+                    { id: 35, english: "world", korean: "세계", pos: "noun", example: "세계를 여행하고 싶습니다.", korExample: "세계를 여행하고 싶습니다." }
+                ],
+                2: [ // TOPIK II 4급 (중급 2) - 35개
+                    { id: 1, english: "communicate", korean: "소통하다", pos: "verb", example: "We need to communicate better.", korExample: "우리는 더 잘 소통해야 합니다." },
+                    { id: 2, english: "experience", korean: "경험", pos: "noun", example: "This is a valuable experience.", korExample: "이것은 소중한 경험입니다." },
+                    { id: 3, english: "development", korean: "발전", pos: "noun", example: "The city shows rapid development.", korExample: "도시가 빠르게 발전하고 있습니다." },
+                    { id: 4, english: "research", korean: "연구", pos: "noun", example: "She conducts medical research.", korExample: "그녀는 의학 연구를 합니다." },
+                    { id: 5, english: "knowledge", korean: "지식", pos: "noun", example: "Knowledge is power.", korExample: "지식은 힘입니다." },
+                    { id: 6, english: "skill", korean: "기술", pos: "noun", example: "He has excellent skills.", korExample: "그는 뛰어난 기술을 가지고 있습니다." },
+                    { id: 7, english: "ability", korean: "능력", pos: "noun", example: "She has great ability.", korExample: "그녀는 훌륭한 능력을 가지고 있습니다." },
+                    { id: 8, english: "effort", korean: "노력", pos: "noun", example: "Success requires effort.", korExample: "성공에는 노력이 필요합니다." },
+                    { id: 9, english: "achievement", korean: "성취", pos: "noun", example: "This is a great achievement.", korExample: "이것은 큰 성취입니다." },
+                    { id: 10, english: "goal", korean: "목표", pos: "noun", example: "Set a clear goal.", korExample: "명확한 목표를 세우세요." },
+                    { id: 11, english: "purpose", korean: "목적", pos: "noun", example: "What is your purpose?", korExample: "당신의 목적은 무엇입니까?" },
+                    { id: 12, english: "plan", korean: "계획", pos: "noun", example: "Make a detailed plan.", korExample: "자세한 계획을 세우세요." },
+                    { id: 13, english: "method", korean: "방법", pos: "noun", example: "Find a good method.", korExample: "좋은 방법을 찾으세요." },
+                    { id: 14, english: "way", korean: "방식", pos: "noun", example: "There are many ways.", korExample: "여러 가지 방식이 있습니다." },
+                    { id: 15, english: "system", korean: "체계", pos: "noun", example: "This is a good system.", korExample: "이것은 좋은 체계입니다." },
+                    { id: 16, english: "organization", korean: "조직", pos: "noun", example: "Join our organization.", korExample: "우리 조직에 가입하세요." },
+                    { id: 17, english: "institution", korean: "기관", pos: "noun", example: "This is a public institution.", korExample: "이것은 공공 기관입니다." },
+                    { id: 18, english: "company", korean: "회사", pos: "noun", example: "I work for a company.", korExample: "저는 회사에서 일합니다." },
+                    { id: 19, english: "business", korean: "사업", pos: "noun", example: "He runs a business.", korExample: "그는 사업을 운영합니다." },
+                    { id: 20, english: "industry", korean: "산업", pos: "noun", example: "The tourism industry grows.", korExample: "관광 산업이 성장합니다." },
+                    { id: 21, english: "market", korean: "시장", pos: "noun", example: "Go to the market.", korExample: "시장에 가세요." },
+                    { id: 22, english: "price", korean: "가격", pos: "noun", example: "The price is reasonable.", korExample: "가격이 합리적입니다." },
+                    { id: 23, english: "value", korean: "가치", pos: "noun", example: "This has great value.", korExample: "이것은 큰 가치가 있습니다." },
+                    { id: 24, english: "quality", korean: "품질", pos: "noun", example: "Quality is important.", korExample: "품질이 중요합니다." },
+                    { id: 25, english: "quantity", korean: "수량", pos: "noun", example: "Check the quantity.", korExample: "수량을 확인하세요." },
+                    { id: 26, english: "amount", korean: "양", pos: "noun", example: "A large amount of water.", korExample: "많은 양의 물입니다." },
+                    { id: 27, english: "number", korean: "숫자", pos: "noun", example: "Write down the number.", korExample: "숫자를 적으세요." },
+                    { id: 28, english: "size", korean: "크기", pos: "noun", example: "What size do you need?", korExample: "어떤 크기가 필요하십니까?" },
+                    { id: 29, english: "shape", korean: "모양", pos: "noun", example: "The shape is round.", korExample: "모양이 둥급니다." },
+                    { id: 30, english: "color", korean: "색깔", pos: "noun", example: "I like this color.", korExample: "저는 이 색깔이 좋습니다." },
+                    { id: 31, english: "sound", korean: "소리", pos: "noun", example: "I hear a sound.", korExample: "소리가 들립니다." },
+                    { id: 32, english: "smell", korean: "냄새", pos: "noun", example: "Good smell of flowers.", korExample: "꽃의 좋은 냄새입니다." },
+                    { id: 33, english: "taste", korean: "맛", pos: "noun", example: "The taste is excellent.", korExample: "맛이 훌륭합니다." },
+                    { id: 34, english: "feeling", korean: "느낌", pos: "noun", example: "I have a good feeling.", korExample: "좋은 느낌이 듭니다." },
+                    { id: 35, english: "emotion", korean: "감정", pos: "noun", example: "Express your emotions.", korExample: "감정을 표현하세요." }
+                ],
+                3: [ // TOPIK II 4급 (중급 2) - 35개
+                    { id: 1, english: "thought", korean: "생각", pos: "noun", example: "Share your thoughts.", korExample: "당신의 생각을 나누세요." },
+                    { id: 2, english: "opinion", korean: "의견", pos: "noun", example: "What is your opinion?", korExample: "당신의 의견은 무엇입니까?" },
+                    { id: 3, english: "idea", korean: "아이디어", pos: "noun", example: "That's a good idea.", korExample: "그것은 좋은 아이디어입니다." },
+                    { id: 4, english: "mind", korean: "마음", pos: "noun", example: "Keep an open mind.", korExample: "열린 마음을 가지세요." },
+                    { id: 5, english: "heart", korean: "심장", pos: "noun", example: "Listen to your heart.", korExample: "당신의 심장 소리를 들으세요." },
+                    { id: 6, english: "spirit", korean: "정신", pos: "noun", example: "Strong spirit helps.", korExample: "강한 정신이 도움이 됩니다." },
+                    { id: 7, english: "soul", korean: "영혼", pos: "noun", example: "Music touches the soul.", korExample: "음악은 영혼을 터치합니다." },
+                    { id: 8, english: "body", korean: "몸", pos: "noun", example: "Take care of your body.", korExample: "몸을 돌보세요." },
+                    { id: 9, english: "face", korean: "얼굴", pos: "noun", example: "Wash your face.", korExample: "얼굴을 씻으세요." },
+                    { id: 10, english: "eye", korean: "눈", pos: "noun", example: "Close your eyes.", korExample: "눈을 감으세요." },
+                    { id: 11, english: "ear", korean: "귀", pos: "noun", example: "Listen with your ears.", korExample: "귀로 들으세요." },
+                    { id: 12, english: "nose", korean: "코", pos: "noun", example: "Your nose is red.", korExample: "당신의 코가 빨갛습니다." },
+                    { id: 13, english: "mouth", korean: "입", pos: "noun", example: "Open your mouth.", korExample: "입을 여세요." },
+                    { id: 14, english: "hand", korean: "손", pos: "noun", example: "Raise your hand.", korExample: "손을 드세요." },
+                    { id: 15, english: "foot", korean: "발", pos: "noun", example: "My foot hurts.", korExample: "제 발이 아픕니다." },
+                    { id: 16, english: "head", korean: "머리", pos: "noun", example: "My head aches.", korExample: "제 머리가 아픕니다." },
+                    { id: 17, english: "hair", korean: "머리카락", pos: "noun", example: "Cut your hair.", korExample: "머리카락을 자르세요." },
+                    { id: 18, english: "skin", korean: "피부", pos: "noun", example: "Protect your skin.", korExample: "피부를 보호하세요." },
+                    { id: 19, english: "bone", korean: "뼈", pos: "noun", example: "The bone is broken.", korExample: "뼈가 부러졌습니다." },
+                    { id: 20, english: "blood", korean: "피", pos: "noun", example: "Donate blood.", korExample: "피를 기부하세요." },
+                    { id: 21, english: "life", korean: "삶", pos: "noun", example: "Enjoy your life.", korExample: "당신의 삶을 즐기세요." },
+                    { id: 22, english: "death", korean: "죽음", pos: "noun", example: "Death is natural.", korExample: "죽음은 자연스러운 것입니다." },
+                    { id: 23, english: "birth", korean: "탄생", pos: "noun", example: "Celebrate the birth.", korExample: "탄생을 축하하세요." },
+                    { id: 24, english: "age", korean: "나이", pos: "noun", example: "What is your age?", korExample: "당신의 나이는 몇입니까?" },
+                    { id: 25, english: "time", korean: "시간", pos: "noun", example: "Time flies quickly.", korExample: "시간이 빠르게 흐릅니다." },
+                    { id: 26, english: "moment", korean: "순간", pos: "noun", example: "Enjoy this moment.", korExample: "이 순간을 즐기세요." },
+                    { id: 27, english: "period", korean: "기간", pos: "noun", example: "A long period of time.", korExample: "긴 기간입니다." },
+                    { id: 28, english: "hour", korean: "시", pos: "noun", example: "Wait for an hour.", korExample: "한 시간 기다리세요." },
+                    { id: 29, english: "minute", korean: "분", pos: "noun", example: "Five minutes left.", korExample: "5분 남았습니다." },
+                    { id: 30, english: "second", korean: "초", pos: "noun", example: "Just a second.", korExample: "잠깐만요." },
+                    { id: 31, english: "day", korean: "날", pos: "noun", example: "Have a good day.", korExample: "좋은 하루 보내세요." },
+                    { id: 32, english: "night", korean: "밤", pos: "noun", example: "Good night.", korExample: "좋은 밤 되세요." },
+                    { id: 33, english: "morning", korean: "아침", pos: "noun", example: "Good morning.", korExample: "좋은 아침입니다." },
+                    { id: 34, english: "afternoon", korean: "오후", pos: "noun", example: "In the afternoon.", korExample: "오후에요." },
+                    { id: 35, english: "evening", korean: "저녁", pos: "noun", example: "This evening is nice.", korExample: "이 저녁은 좋습니다." }
+                ],
+                4: [ // TOPIK II 5급 (고급 1) - 40개
+                    { id: 1, english: "yesterday", korean: "어제", pos: "noun", example: "I met him yesterday.", korExample: "어제 그를 만났습니다." },
+                    { id: 2, english: "today", korean: "오늘", pos: "noun", example: "Today is Monday.", korExample: "오늘은 월요일입니다." },
+                    { id: 3, english: "tomorrow", korean: "내일", pos: "noun", example: "See you tomorrow.", korExample: "내일 만나요." },
+                    { id: 4, english: "week", korean: "주", pos: "noun", example: "Next week is busy.", korExample: "다음 주는 바쁩니다." },
+                    { id: 5, english: "month", korean: "달", pos: "noun", example: "Last month was cold.", korExample: "지난달은 추웠습니다." },
+                    { id: 6, english: "year", korean: "해", pos: "noun", example: "Happy new year.", korExample: "새해 복 많이 받으세요." },
+                    { id: 7, english: "past", korean: "과거", pos: "noun", example: "Learn from the past.", korExample: "과거에서 배우세요." },
+                    { id: 8, english: "present", korean: "현재", pos: "noun", example: "Focus on the present.", korExample: "현재에 집중하세요." },
+                    { id: 9, english: "future", korean: "미래", pos: "noun", example: "Plan for the future.", korExample: "미래를 계획하세요." },
+                    { id: 10, english: "beginning", korean: "시작", pos: "noun", example: "The beginning is important.", korExample: "시작이 중요합니다." },
+                    { id: 11, english: "end", korean: "끝", pos: "noun", example: "Wait until the end.", korExample: "끝까지 기다리세요." },
+                    { id: 12, english: "start", korean: "출발", pos: "noun", example: "Ready for the start.", korExample: "출발 준비가 되었습니다." },
+                    { id: 13, english: "finish", korean: "완료", pos: "noun", example: "The finish line is near.", korExample: "완료 지점이 가깝습니다." },
+                    { id: 14, english: "change", korean: "변화", pos: "noun", example: "Change is necessary.", korExample: "변화는 필요합니다." },
+                    { id: 15, english: "growth", korean: "성장", pos: "noun", example: "Personal growth matters.", korExample: "개인적 성장이 중요합니다." },
+                    { id: 16, english: "progress", korean: "진보", pos: "noun", example: "We made progress.", korExample: "우리는 진보했습니다." },
+                    { id: 17, english: "improvement", korean: "개선", pos: "noun", example: "Show improvement.", korExample: "개선을 보여주세요." },
+                    { id: 18, english: "success", korean: "성공", pos: "noun", example: "Success takes time.", korExample: "성공은 시간이 걸립니다." },
+                    { id: 19, english: "failure", korean: "실패", pos: "noun", example: "Learn from failure.", korExample: "실패에서 배우세요." },
+                    { id: 20, english: "mistake", korean: "실수", pos: "noun", example: "Everyone makes mistakes.", korExample: "누구나 실수를 합니다." },
+                    { id: 21, english: "error", korean: "오류", pos: "noun", example: "Fix the error.", korExample: "오류를 고치세요." },
+                    { id: 22, english: "problem", korean: "문제", pos: "noun", example: "Solve the problem.", korExample: "문제를 해결하세요." },
+                    { id: 23, english: "solution", korean: "해결책", pos: "noun", example: "Find a solution.", korExample: "해결책을 찾으세요." },
+                    { id: 24, english: "answer", korean: "답", pos: "noun", example: "The answer is simple.", korExample: "답은 간단합니다." },
+                    { id: 25, english: "question", korean: "질문", pos: "noun", example: "Ask a question.", korExample: "질문하세요." },
+                    { id: 26, english: "reason", korean: "이유", pos: "noun", example: "What is the reason?", korExample: "이유가 무엇입니까?" },
+                    { id: 27, english: "cause", korean: "원인", pos: "noun", example: "Find the cause.", korExample: "원인을 찾으세요." },
+                    { id: 28, english: "result", korean: "결과", pos: "noun", example: "Check the result.", korExample: "결과를 확인하세요." },
+                    { id: 29, english: "effect", korean: "효과", pos: "noun", example: "The effect is positive.", korExample: "효과가 긍정적입니다." },
+                    { id: 30, english: "influence", korean: "영향", pos: "noun", example: "Under your influence.", korExample: "당신의 영향 아래입니다." },
+                    { id: 31, english: "power", korean: "힘", pos: "noun", example: "Power of love.", korExample: "사랑의 힘입니다." },
+                    { id: 32, english: "strength", korean: "강함", pos: "noun", example: "Show your strength.", korExample: "당신의 강함을 보여주세요." },
+                    { id: 33, english: "weakness", korean: "약점", pos: "noun", example: "Everyone has weakness.", korExample: "누구나 약점이 있습니다." },
+                    { id: 34, english: "advantage", korean: "이점", pos: "noun", example: "The advantage is clear.", korExample: "이점이 명확합니다." },
+                    { id: 35, english: "disadvantage", korean: "단점", pos: "noun", example: "Consider the disadvantage.", korExample: "단점을 고려하세요." },
+                    { id: 36, english: "benefit", korean: "혜택", pos: "noun", example: "Health benefits.", korExample: "건강 혜택입니다." },
+                    { id: 37, english: "loss", korean: "손실", pos: "noun", example: "Avoid the loss.", korExample: "손실을 피하세요." },
+                    { id: 38, english: "gain", korean: "이득", pos: "noun", example: "The gain is significant.", korExample: "이득이 상당합니다." },
+                    { id: 39, english: "profit", korean: "이익", pos: "noun", example: "Make a profit.", korExample: "이익을 내세요." },
+                    { id: 40, english: "damage", korean: "손상", pos: "noun", example: "Prevent damage.", korExample: "손상을 예방하세요." }
+                ],
+                5: [ // TOPIK II 5급 (고급 1) - 40개
+                    { id: 1, english: "danger", korean: "위험", pos: "noun", example: "Avoid danger.", korExample: "위험을 피하세요." },
+                    { id: 2, english: "safety", korean: "안전", pos: "noun", example: "Safety first.", korExample: "안전이 최우선입니다." },
+                    { id: 3, english: "risk", korean: "위험성", pos: "noun", example: "Take the risk.", korExample: "위험성을 감수하세요." },
+                    { id: 4, english: "chance", korean: "기회", pos: "noun", example: "A good chance.", korExample: "좋은 기회입니다." },
+                    { id: 5, english: "opportunity", korean: "기회", pos: "noun", example: "Great opportunity.", korExample: "훌륭한 기회입니다." },
+                    { id: 6, english: "possibility", korean: "가능성", pos: "noun", example: "There is possibility.", korExample: "가능성이 있습니다." },
+                    { id: 7, english: "necessity", korean: "필요성", pos: "noun", example: "The necessity is clear.", korExample: "필요성이 명확합니다." },
+                    { id: 8, english: "importance", korean: "중요성", pos: "noun", example: "Understand the importance.", korExample: "중요성을 이해하세요." },
+                    { id: 9, english: "meaning", korean: "의미", pos: "noun", example: "What is the meaning?", korExample: "의미가 무엇입니까?" },
+                    { id: 10, english: "significance", korean: "중요도", pos: "noun", example: "Historical significance.", korExample: "역사적 중요도입니다." },
+                    { id: 11, english: "purpose", korean: "목적", pos: "noun", example: "State your purpose.", korExample: "목적을 말하세요." },
+                    { id: 12, english: "function", korean: "기능", pos: "noun", example: "The function works.", korExample: "기능이 작동합니다." },
+                    { id: 13, english: "role", korean: "역할", pos: "noun", example: "Play your role.", korExample: "당신의 역할을 하세요." },
+                    { id: 14, english: "duty", korean: "의무", pos: "noun", example: "It is your duty.", korExample: "그것은 당신의 의무입니다." },
+                    { id: 15, english: "responsibility", korean: "책임", pos: "noun", example: "Take responsibility.", korExample: "책임을 지세요." },
+                    { id: 16, english: "right", korean: "권리", pos: "noun", example: "Human rights.", korExample: "인권입니다." },
+                    { id: 17, english: "freedom", korean: "자유", pos: "noun", example: "Freedom of speech.", korExample: "언론의 자유입니다." },
+                    { id: 18, english: "justice", korean: "정의", pos: "noun", example: "Fight for justice.", korExample: "정의를 위해 싸우세요." },
+                    { id: 19, english: "equality", korean: "평등", pos: "noun", example: "Gender equality.", korExample: "성 평등입니다." },
+                    { id: 20, english: "peace", korean: "평화", pos: "noun", example: "World peace.", korExample: "세계 평화입니다." },
+                    { id: 21, english: "war", korean: "전쟁", pos: "noun", example: "War is terrible.", korExample: "전쟁은 끔찍합니다." },
+                    { id: 22, english: "conflict", korean: "분쟁", pos: "noun", example: "Resolve the conflict.", korExample: "분쟁을 해결하세요." },
+                    { id: 23, english: "agreement", korean: "합의", pos: "noun", example: "Reach an agreement.", korExample: "합의에 도달하세요." },
+                    { id: 24, english: "contract", korean: "계약", pos: "noun", example: "Sign the contract.", korExample: "계약에 서명하세요." },
+                    { id: 25, english: "promise", korean: "약속", pos: "noun", example: "Keep your promise.", korExample: "약속을 지키세요." },
+                    { id: 26, english: "trust", korean: "신뢰", pos: "noun", example: "Build trust.", korExample: "신뢰를 쌓으세요." },
+                    { id: 27, english: "belief", korean: "믿음", pos: "noun", example: "Strong belief.", korExample: "강한 믿음입니다." },
+                    { id: 28, english: "faith", korean: "신념", pos: "noun", example: "Have faith.", korExample: "신념을 가지세요." },
+                    { id: 29, english: "hope", korean: "희망", pos: "noun", example: "Never lose hope.", korExample: "희망을 잃지 마세요." },
+                    { id: 30, english: "dream", korean: "꿈", pos: "noun", example: "Follow your dream.", korExample: "꿈을 따르세요." },
+                    { id: 31, english: "wish", korean: "소원", pos: "noun", example: "Make a wish.", korExample: "소원을 빌어요." },
+                    { id: 32, english: "desire", korean: "욕망", pos: "noun", example: "Strong desire.", korExample: "강한 욕망입니다." },
+                    { id: 33, english: "need", korean: "필요", pos: "noun", example: "Basic needs.", korExample: "기본 필요입니다." },
+                    { id: 34, english: "want", korean: "원함", pos: "noun", example: "What do you want?", korExample: "무엇을 원하십니까?" },
+                    { id: 35, english: "request", korean: "요청", pos: "noun", example: "Make a request.", korExample: "요청하세요." },
+                    { id: 36, english: "demand", korean: "요구", pos: "noun", example: "Meet the demand.", korExample: "요구를 충족하세요." },
+                    { id: 37, english: "supply", korean: "공급", pos: "noun", example: "Supply and demand.", korExample: "공급과 수요입니다." },
+                    { id: 38, english: "service", korean: "서비스", pos: "noun", example: "Customer service.", korExample: "고객 서비스입니다." },
+                    { id: 39, english: "product", korean: "제품", pos: "noun", example: "New product launch.", korExample: "신제품 출시입니다." },
+                    { id: 40, english: "material", korean: "재료", pos: "noun", example: "Raw materials.", korExample: "원자재입니다." }
+                ]
+            };
+        }<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TOPIK Vocabulary Trainer</title>
-<style>
-body { font-family: Arial, sans-serif; margin:20px; }
-.level-grid { display:flex; gap:10px; flex-wrap:wrap; }
-.level-card { border:1px solid #ccc; padding:10px; width:180px; border-radius:5px; position:relative; }
-.level-card.disabled { opacity:0.5; }
-.mode-btn { display:block; margin:5px 0; width:100%; }
-.status-badge { background:#f0f0f0; padding:2px 5px; font-size:0.8em; border-radius:3px; }
-#learningMode { display:none; margin-top:20px; }
-#learningMode.active { display:block; }
-.choice-btn { display:block; margin:5px 0; width:100%; padding:5px; }
-.choice-btn.correct { background: #c8f7c5; }
-.choice-btn.incorrect { background: #f7c5c5; }
-.selected { font-weight:bold; }
-#mcFeedback, #tpFeedback { margin-top:10px; display:none; font-weight:bold; }
-#mcFeedback.show, #tpFeedback.show { display:block; }
-#mcFeedback.correct, #tpFeedback.correct { color:green; }
-#mcFeedback.incorrect, #tpFeedback.incorrect { color:red; }
-.example-sentence { font-size:0.9em; color:#555; margin-bottom:5px; }
-.input-box { width:30px; text-align:center; margin:2px; font-size:1.2em; }
-#tpSubmitBtn { margin-top:10px; padding:5px 10px; }
-</style>
-</head>
-<body>
-
-<h1>TOPIK Vocabulary Trainer</h1>
-
-<div id="levelSelection">
-  <h2>Level Selection</h2>
-  <div class="level-grid" id="levelGrid"></div>
-</div>
-
-<div id="learningMode">
-  <h2 id="modeTitle"></h2>
-
-  <!-- MC Mode -->
-  <div id="mcMode">
-    <div id="koreanWord" style="font-size:1.5em; margin-bottom:5px;"></div>
-    <div id="choices"></div>
-    <div id="mcFeedback"></div>
-    <button id="mcNextBtn" onclick="nextMCQuestion()">Next</button>
-  </div>
-
-  <!-- TP Mode -->
-  <div id="tpMode">
-    <div id="posLabel"></div>
-    <div id="englishWord" style="font-size:1.5em; margin-bottom:5px;"></div>
-    <div id="exampleSentence" class="example-sentence"></div>
-    <div id="inputBoxes"></div>
-    <div id="tpFeedback"></div>
-    <button id="tpSubmitBtn" onclick="submitTypingPractice()">제출</button>
-  </div>
-</div>
-
-<script>
-// 전역 상태
-let currentLevel = null;
-let currentMode = null;
-let levelData = {};
-let currentQuestions = [];
-let currentQuestionIndex = 0;
-let score = 0;
-let answered = false;
-
-// localStorage 키
-const STORAGE_KEY = 'vocabProgress';
-
-// 초기화
-initializeApp();
-
-// 예시 레벨 데이터 (실제 데이터로 교체 가능)
-levelData = {
-    1: [
-        { id:1, korean:'사과', english:'apple', pos:'명사', example:'나는 사과를 먹었다.' },
-        { id:2, korean:'먹다', english:'eat', pos:'동사', example:'밥을 먹다.' },
-        { id:3, korean:'빠르다', english:'fast', pos:'형용사', example:'그는 빠르다.' },
-        { id:4, korean:'책상', english:'desk', pos:'명사', example:'책상 위에 책이 있다.' },
-        { id:5, korean:'크다', english:'big', pos:'형용사', example:'집이 크다.' },
-        // 30개 이상 추가 가능
-    ],
-    2: [],
-    3: [],
-    4: [],
-    5: []
-};
-
-function initializeApp() {
-    loadProgressFromStorage();
-    renderLevelSelection();
-}
-
-// localStorage 로드
-function loadProgressFromStorage() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (!saved) {
-        initializeProgress();
-        return;
-    }
-    window.progress = JSON.parse(saved);
-}
-
-function initializeProgress() {
-    window.progress = { levels: {} };
-    for (let i=1; i<=5; i++) {
-        window.progress.levels[i] = { mcPassed:false, tpPassed:false, mcScore:0, tpScore:0 };
-    }
-    saveProgressToStorage();
-}
-
-function saveProgressToStorage() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(window.progress));
-}
-
-// 레벨 선택
-function renderLevelSelection() {
-    const levelGrid = document.getElementById('levelGrid');
-    levelGrid.innerHTML = '';
-
-    for (let i=1; i<=5; i++) {
-        const levelInfo = window.progress.levels[i];
-        const isUnlocked = i===1 || (window.progress.levels[i-1].mcPassed && window.progress.levels[i-1].tpPassed);
-
-        const card = document.createElement('div');
-        card.className = `level-card ${isUnlocked?'':'disabled'}`;
-
-        let statusHTML = '';
-        if (levelInfo.mcPassed && levelInfo.tpPassed) {
-            statusHTML = '<div class="status-badge">✓ 완료</div>';
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrimp - Vocabulary Learning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        let mcScoreText = levelInfo.mcScore ? `MC: ${levelInfo.mcScore}/${levelData[i].length}` : '';
-        let tpScoreText = levelInfo.tpScore ? `TP: ${levelInfo.tpScore}/${levelData[i].length}` : '';
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-        card.innerHTML = `
-            <div class="level-title">Level ${i}</div>
-            <div class="mode-buttons">
-                <button class="mode-btn mc" ${isUnlocked?'':'disabled'} onclick="startMode(${i}, 'mc')">Multiple Choice</button>
-                <button class="mode-btn tp" ${isUnlocked?'':'disabled'} onclick="startMode(${i}, 'tp')">Typing Practice</button>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .level-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .level-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .level-card:hover:not(.disabled) {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .level-card.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .level-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .level-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .mode-buttons {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        .mode-btn {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .mode-btn.mc {
+            background: #3498db;
+            color: white;
+        }
+
+        .mode-btn.mc:hover:not(:disabled) {
+            background: #2980b9;
+        }
+
+        .mode-btn.tp {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .mode-btn.tp:hover:not(:disabled) {
+            background: #c0392b;
+        }
+
+        .mode-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #2ecc71;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+
+        /* Learning Mode Styles */
+        .learning-mode {
+            display: none;
+        }
+
+        .learning-mode.active {
+            display: block;
+        }
+
+        .learning-container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .learning-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 20px;
+        }
+
+        .learning-title {
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .progress-info {
+            text-align: right;
+            color: #666;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #2ecc71;
+            transition: width 0.3s ease;
+        }
+
+        .question-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .question-text {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .pos-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .example-sentence {
+            font-size: 1.1em;
+            color: #555;
+            font-style: italic;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+
+        /* Multiple Choice */
+        .choices {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .choice-btn {
+            padding: 20px;
+            font-size: 1.1em;
+            border: 2px solid #bdc3c7;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .choice-btn:hover {
+            border-color: #3498db;
+            background: #ecf0f1;
+        }
+
+        .choice-btn.selected.correct {
+            background: #2ecc71;
+            border-color: #27ae60;
+            color: white;
+        }
+
+        .choice-btn.selected.incorrect {
+            background: #e74c3c;
+            border-color: #c0392b;
+            color: white;
+        }
+
+        .choice-btn:disabled {
+            cursor: not-allowed;
+        }
+
+        /* Typing Practice */
+        .typing-container {
+            margin-top: 30px;
+        }
+
+        .input-boxes {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .input-box {
+            width: 40px;
+            height: 50px;
+            border: 2px solid #bdc3c7;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .input-box:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .input-box.correct {
+            background: #2ecc71;
+            color: white;
+            border-color: #27ae60;
+        }
+
+        .input-box.incorrect {
+            background: #e74c3c;
+            color: white;
+            border-color: #c0392b;
+        }
+
+        .input-box:disabled {
+            cursor: not-allowed;
+        }
+
+        /* Feedback */
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .feedback.incorrect {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Result Modal */
+        .result-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .result-modal.show {
+            display: flex;
+        }
+
+        .result-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .result-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .result-score {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 20px 0;
+            color: #3498db;
+        }
+
+        .result-message {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #555;
+        }
+
+        .result-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .result-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .result-btn.retry {
+            background: #3498db;
+            color: white;
+        }
+
+        .result-btn.retry:hover {
+            background: #2980b9;
+        }
+
+        .result-btn.home {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .result-btn.home:hover {
+            background: #7f8c8d;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .action-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn.next {
+            background: #3498db;
+            color: white;
+        }
+
+        .action-btn.next:hover {
+            background: #2980b9;
+        }
+
+        .action-btn.back {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .action-btn.back:hover {
+            background: #7f8c8d;
+        }
+
+        .action-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦐 Shrimp</h1>
+            <p>당신을 위한 나의 마음</p>
+        </div>
+
+        <!-- Level Selection Screen -->
+        <div id="levelSelection">
+            <div class="level-selection" id="levelGrid"></div>
+        </div>
+
+        <!-- Learning Mode Screen -->
+        <div id="learningMode" class="learning-mode">
+            <div class="learning-container">
+                <div class="learning-header">
+                    <div>
+                        <div class="learning-title" id="modeTitle"></div>
+                        <div class="progress-info">
+                            <span id="questionCounter">1 / 30</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="action-btn back" onclick="backToLevelSelection()">← 돌아가기</button>
+                </div>
+
+                <!-- Multiple Choice Mode -->
+                <div id="mcMode">
+                    <div class="question-container">
+                        <div class="pos-label" id="mcPosLabel"></div>
+                        <div class="question-text" id="koreanWord"></div>
+                        <div class="example-sentence" id="mcExampleSentence"></div>
+                        <div class="choices" id="choices"></div>
+                        <div class="feedback" id="mcFeedback"></div>
+                        <div class="action-buttons">
+                            <button class="action-btn next" id="mcNextBtn" onclick="nextMCQuestion()" disabled>다음</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typing Practice Mode -->
+                <div id="tpMode">
+                    <div class="question-container">
+                        <div class="pos-label" id="posLabel"></div>
+                        <div class="question-text" id="englishWord"></div>
+                        <div class="example-sentence" id="exampleSentence"></div>
+                        <div class="typing-container">
+                            <div class="input-boxes" id="inputBoxes"></div>
+                            <div class="feedback" id="tpFeedback"></div>
+                            <div class="action-buttons">
+                                <button class="action-btn next" id="tpSubmitBtn" onclick="submitTypingPractice()">제출</button>
+                                <button class="action-btn next" id="tpNextBtn" onclick="nextTPQuestion()" style="display:none;">다음</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            ${statusHTML}
-            <div class="status-badge" style="margin-top:10px;">${mcScoreText} ${tpScoreText}</div>
-        `;
-        levelGrid.appendChild(card);
-    }
+        </div>
 
-    document.getElementById('levelSelection').style.display='block';
-    document.getElementById('learningMode').classList.remove('active');
-}
+        <!-- Result Modal -->
+        <div class="result-modal" id="resultModal">
+            <div class="result-content">
+                <div class="result-title" id="resultTitle"></div>
+                <div class="result-score" id="resultScore"></div>
+                <div class="result-message" id="resultMessage"></div>
+                <div class="result-buttons">
+                    <button class="result-btn retry" id="retryBtn" onclick="retryMode()">재시도</button>
+                    <button class="result-btn home" onclick="backToLevelSelection()">돌아가기</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-// 모드 시작
-function startMode(level, mode) {
-    currentLevel=level;
-    currentMode=mode;
-    currentQuestionIndex=0;
-    score=0;
-    answered=false;
+    <script>
+        // 전역 상태
+        let currentLevel = null;
+        let currentMode = null;
+        let levelData = {};
+        let currentQuestions = [];
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answered = false;
 
-    currentQuestions = [...levelData[level]].sort(()=>Math.random()-0.5);
+        // localStorage 키
+        const STORAGE_KEY = 'vocabProgress';
 
-    document.getElementById('levelSelection').style.display='none';
-    document.getElementById('learningMode').classList.add('active');
+        // 초기화
+        function initializeApp() {
+            loadProgressFromStorage();
+            loadLevelData();
+            renderLevelSelection();
+        }
 
-    document.getElementById('mcMode').style.display = mode==='mc'?'block':'none';
-    document.getElementById('tpMode').style.display = mode==='tp'?'block':'none';
-    document.getElementById('modeTitle').textContent = mode==='mc'?`Level ${level} - Multiple Choice`:`Level ${level} - Typing Practice`;
+        // Level 데이터 로드 (TOPIK 시험 출제 단어)
+        function loadLevelData() {
+            levelData = {
+                1: [ // TOPIK II 3급 (중급 1)
+                    { id: 1, english: "advantage", korean: "장점", pos: "noun", example: "The advantage of this product is the quality." },
+                    { id: 2, english: "agriculture", korean: "농업", pos: "noun", example: "Agriculture is important for our country." },
+                    { id: 3, english: "announce", korean: "공지하다", pos: "verb", example: "The school announced the new schedule." },
+                    { id: 4, english: "approach", korean: "접근", pos: "noun", example: "A new approach to problem solving." },
+                    { id: 5, english: "arrange", korean: "정렬하다", pos: "verb", example: "Arrange the books on the shelf." },
+                    { id: 6, english: "attempt", korean: "시도", pos: "noun", example: "His attempt to win was successful." },
+                    { id: 7, english: "attract", korean: "끌다", pos: "verb", example: "This event attracts many visitors." },
+                    { id: 8, english: "authority", korean: "권위", pos: "noun", example: "The authority made a decision." },
+                    { id: 9, english: "awareness", korean: "인식", pos: "noun", example: "Awareness of safety is important." },
+                    { id: 10, english: "background", korean: "배경", pos: "noun", example: "His background is in engineering." },
+                    { id: 11, english: "balance", korean: "균형", pos: "noun", example: "Maintain a balance between work and life." },
+                    { id: 12, english: "barrier", korean: "장벽", pos: "noun", example: "Language is a barrier to communication." },
+                    { id: 13, english: "basement", korean: "지하실", pos: "noun", example: "The basement is dark and cold." },
+                    { id: 14, english: "behavior", korean: "행동", pos: "noun", example: "His behavior was very strange." },
+                    { id: 15, english: "benefit", korean: "이점", pos: "noun", example: "Exercise has many health benefits." },
+                    { id: 16, english: "broadcast", korean: "방송하다", pos: "verb", example: "The game will be broadcast live." },
+                    { id: 17, english: "budget", korean: "예산", pos: "noun", example: "The government approved the budget." },
+                    { id: 18, english: "burden", korean: "부담", pos: "noun", example: "This is a heavy burden to carry." },
+                    { id: 19, english: "campaign", korean: "캠페인", pos: "noun", example: "The marketing campaign was successful." },
+                    { id: 20, english: "capacity", korean: "용량", pos: "noun", example: "The stadium has a large capacity." },
+                    { id: 21, english: "capture", korean: "포착하다", pos: "verb", example: "The camera captured a beautiful moment." },
+                    { id: 22, english: "career", korean: "경력", pos: "noun", example: "She has a successful career." },
+                    { id: 23, english: "casual", korean: "캐주얼한", pos: "adjective", example: "He wore casual clothes." },
+                    { id: 24, english: "category", korean: "범주", pos: "noun", example: "Books are divided into categories." },
+                    { id: 25, english: "challenge", korean: "도전", pos: "noun", example: "This is a big challenge." },
+                    { id: 26, english: "character", korean: "성격", pos: "noun", example: "She has a strong character." },
+                    { id: 27, english: "circumstance", korean: "상황", pos: "noun", example: "Under these circumstances, we must act." },
+                    { id: 28, english: "claim", korean: "주장하다", pos: "verb", example: "He claims to be the winner." },
+                    { id: 29, english: "clarify", korean: "명확히하다", pos: "verb", example: "Please clarify your position." },
+                    { id: 30, english: "classify", korean: "분류하다", pos: "verb", example: "Classify these items by color." }
+                ],
+                2: [ // TOPIK II 4급 (중급 2)
+                    { id: 1, english: "collaborate", korean: "협력하다", pos: "verb", example: "We should collaborate on this project." },
+                    { id: 2, english: "commercial", korean: "상업적인", pos: "adjective", example: "This is a commercial building." },
+                    { id: 3, english: "commission", korean: "위원회", pos: "noun", example: "The commission made a decision." },
+                    { id: 4, english: "commitment", korean: "약속", pos: "noun", example: "He made a commitment to excellence." },
+                    { id: 5, english: "commodity", korean: "상품", pos: "noun", example: "Oil is a valuable commodity." },
+                    { id: 6, english: "common", korean: "공통의", pos: "adjective", example: "They have common interests." },
+                    { id: 7, english: "communicate", korean: "소통하다", pos: "verb", example: "We need to communicate better." },
+                    { id: 8, english: "community", korean: "커뮤니티", pos: "noun", example: "The community supports local businesses." },
+                    { id: 9, english: "comparable", korean: "비교할 수 있는", pos: "adjective", example: "These prices are comparable." },
+                    { id: 10, english: "comparative", korean: "비교의", pos: "adjective", example: "A comparative study was conducted." },
+                    { id: 11, english: "compare", korean: "비교하다", pos: "verb", example: "Compare the two products." },
+                    { id: 12, english: "competition", korean: "경쟁", pos: "noun", example: "The competition is fierce." },
+                    { id: 13, english: "compile", korean: "편집하다", pos: "verb", example: "The team compiled the report." },
+                    { id: 14, english: "complement", korean: "보완", pos: "noun", example: "This color is a nice complement." },
+                    { id: 15, english: "complex", korean: "복잡한", pos: "adjective", example: "This is a complex problem." },
+                    { id: 16, english: "component", korean: "구성 요소", pos: "noun", example: "Each component is important." },
+                    { id: 17, english: "comprehensive", korean: "포괄적인", pos: "adjective", example: "A comprehensive review was done." },
+                    { id: 18, english: "comprise", korean: "포함하다", pos: "verb", example: "The team comprises five members." },
+                    { id: 19, english: "compromise", korean: "타협", pos: "noun", example: "We reached a compromise." },
+                    { id: 20, english: "computation", korean: "계산", pos: "noun", example: "Mathematical computation is required." },
+                    { id: 21, english: "concentrate", korean: "집중하다", pos: "verb", example: "Concentrate on your studies." },
+                    { id: 22, english: "concern", korean: "관심", pos: "noun", example: "This is my main concern." },
+                    { id: 23, english: "conclude", korean: "결론짓다", pos: "verb", example: "The meeting concluded successfully." },
+                    { id: 24, english: "concurrent", korean: "동시의", pos: "adjective", example: "These events are concurrent." },
+                    { id: 25, english: "conference", korean: "회의", pos: "noun", example: "The conference starts tomorrow." },
+                    { id: 26, english: "confidence", korean: "자신감", pos: "noun", example: "She spoke with confidence." },
+                    { id: 27, english: "confirm", korean: "확인하다", pos: "verb", example: "Please confirm your attendance." },
+                    { id: 28, english: "conflict", korean: "갈등", pos: "noun", example: "There is a conflict between them." },
+                    { id: 29, english: "confront", korean: "맞서다", pos: "verb", example: "We must confront the issues." },
+                    { id: 30, english: "confusion", korean: "혼란", pos: "noun", example: "There is confusion about the rules." }
+                ],
+                3: [ // TOPIK II 4급 (중급 2)
+                    { id: 1, english: "consequence", korean: "결과", pos: "noun", example: "This has serious consequences." },
+                    { id: 2, english: "conservative", korean: "보수적인", pos: "adjective", example: "He has conservative views." },
+                    { id: 3, english: "consider", korean: "고려하다", pos: "verb", example: "Please consider this option." },
+                    { id: 4, english: "considerable", korean: "상당한", pos: "adjective", example: "A considerable amount of money." },
+                    { id: 5, english: "consist", korean: "이루어지다", pos: "verb", example: "The team consists of experts." },
+                    { id: 6, english: "consistency", korean: "일관성", pos: "noun", example: "We need consistency in our approach." },
+                    { id: 7, english: "constant", korean: "끊임없는", pos: "adjective", example: "There is constant noise outside." },
+                    { id: 8, english: "constitute", korean: "구성하다", pos: "verb", example: "These factors constitute the problem." },
+                    { id: 9, english: "constraint", korean: "제약", pos: "noun", example: "There are budget constraints." },
+                    { id: 10, english: "construct", korean: "건설하다", pos: "verb", example: "They will construct a new building." },
+                    { id: 11, english: "consultation", korean: "상담", pos: "noun", example: "Free consultation is available." },
+                    { id: 12, english: "consume", korean: "소비하다", pos: "verb", example: "People consume less during the crisis." },
+                    { id: 13, english: "consumer", korean: "소비자", pos: "noun", example: "Consumer satisfaction is important." },
+                    { id: 14, english: "consumption", korean: "소비", pos: "noun", example: "Energy consumption is rising." },
+                    { id: 15, english: "contact", korean: "연락", pos: "noun", example: "Contact me if you need help." },
+                    { id: 16, english: "contain", korean: "포함하다", pos: "verb", example: "The box contains books." },
+                    { id: 17, english: "contemporary", korean: "현대의", pos: "adjective", example: "Contemporary art is interesting." },
+                    { id: 18, english: "context", korean: "맥락", pos: "noun", example: "Understand the context first." },
+                    { id: 19, english: "continual", korean: "계속된", pos: "adjective", example: "Continual improvement is needed." },
+                    { id: 20, english: "continue", korean: "계속하다", pos: "verb", example: "The project will continue." },
+                    { id: 21, english: "contract", korean: "계약", pos: "noun", example: "Sign the contract carefully." },
+                    { id: 22, english: "contradict", korean: "모순되다", pos: "verb", example: "This contradicts what you said." },
+                    { id: 23, english: "contrast", korean: "대조", pos: "noun", example: "There is a sharp contrast." },
+                    { id: 24, english: "contribute", korean: "기여하다", pos: "verb", example: "Everyone should contribute ideas." },
+                    { id: 25, english: "contribution", korean: "기여", pos: "noun", example: "His contribution was significant." },
+                    { id: 26, english: "control", korean: "통제", pos: "noun", example: "Control the situation carefully." },
+                    { id: 27, english: "convention", korean: "관례", pos: "noun", example: "Follow the convention." },
+                    { id: 28, english: "conversation", korean: "대화", pos: "noun", example: "We had a good conversation." },
+                    { id: 29, english: "convert", korean: "변환하다", pos: "verb", example: "Convert the file to PDF." },
+                    { id: 30, english: "cooperate", korean: "협력하다", pos: "verb", example: "Please cooperate with us." }
+                ],
+                4: [ // TOPIK II 5급 (고급 1)
+                    { id: 1, english: "coordinate", korean: "조정하다", pos: "verb", example: "Coordinate the team efforts." },
+                    { id: 2, english: "corporation", korean: "기업", pos: "noun", example: "The corporation is expanding." },
+                    { id: 3, english: "correspond", korean: "상응하다", pos: "verb", example: "This corresponds to the previous data." },
+                    { id: 4, english: "correspondence", korean: "서신", pos: "noun", example: "Keep the correspondence filed." },
+                    { id: 5, english: "corridor", korean: "복도", pos: "noun", example: "The corridor is long." },
+                    { id: 6, english: "corruption", korean: "부패", pos: "noun", example: "Fight against corruption." },
+                    { id: 7, english: "council", korean: "위원회", pos: "noun", example: "The council met today." },
+                    { id: 8, english: "counsel", korean: "조언", pos: "noun", example: "Seek legal counsel." },
+                    { id: 9, english: "counter", korean: "대응하다", pos: "verb", example: "Counter the attack effectively." },
+                    { id: 10, english: "countless", korean: "무수한", pos: "adjective", example: "There are countless possibilities." },
+                    { id: 11, english: "couple", korean: "한 쌍", pos: "noun", example: "The couple got married." },
+                    { id: 12, english: "courageous", korean: "용감한", pos: "adjective", example: "A courageous decision." },
+                    { id: 13, english: "courtesy", korean: "예의", pos: "noun", example: "Show courtesy to others." },
+                    { id: 14, english: "coverage", korean: "범위", pos: "noun", example: "Insurance coverage is important." },
+                    { id: 15, english: "craft", korean: "만들다", pos: "verb", example: "Craft a perfect plan." },
+                    { id: 16, english: "crash", korean: "충돌", pos: "noun", example: "The plane crash was tragic." },
+                    { id: 17, english: "credibility", korean: "신뢰성", pos: "noun", example: "Maintain credibility." },
+                    { id: 18, english: "credit", korean: "신용", pos: "noun", example: "Buy on credit." },
+                    { id: 19, english: "cricket", korean: "크리켓", pos: "noun", example: "Cricket is popular in India." },
+                    { id: 20, english: "criminal", korean: "범죄자", pos: "noun", example: "The criminal was caught." },
+                    { id: 21, english: "criteria", korean: "기준", pos: "noun", example: "Meet the criteria." },
+                    { id: 22, english: "critical", korean: "중요한", pos: "adjective", example: "This is critical timing." },
+                    { id: 23, english: "criticism", korean: "비판", pos: "noun", example: "Accept constructive criticism." },
+                    { id: 24, english: "crop", korean: "농작물", pos: "noun", example: "The crop failed this year." },
+                    { id: 25, english: "crucial", korean: "중요한", pos: "adjective", example: "This is a crucial moment." },
+                    { id: 26, english: "crude", korean: "원유", pos: "noun", example: "Crude oil prices rose." },
+                    { id: 27, english: "cruise", korean: "유람선", pos: "noun", example: "Take a cruise vacation." },
+                    { id: 28, english: "crystal", korean: "수정", pos: "noun", example: "A beautiful crystal glass." },
+                    { id: 29, english: "cultivate", korean: "재배하다", pos: "verb", example: "Cultivate good habits." },
+                    { id: 30, english: "curiosity", korean: "호기심", pos: "noun", example: "Curiosity killed the cat." }
+                ],
+                5: [ // TOPIK II 5급 (고급 1)
+                    { id: 1, english: "currency", korean: "화폐", pos: "noun", example: "The currency is strong." },
+                    { id: 2, english: "current", korean: "현재의", pos: "adjective", example: "The current situation." },
+                    { id: 3, english: "curriculum", korean: "교과과정", pos: "noun", example: "The curriculum is updated." },
+                    { id: 4, english: "cushion", korean: "쿠션", pos: "noun", example: "A soft cushion." },
+                    { id: 5, english: "custody", korean: "양육권", pos: "noun", example: "Child custody laws." },
+                    { id: 6, english: "customary", korean: "관례적인", pos: "adjective", example: "Customary practice." },
+                    { id: 7, english: "customer", korean: "고객", pos: "noun", example: "The customer is always right." },
+                    { id: 8, english: "cycle", korean: "순환", pos: "noun", example: "The economic cycle." },
+                    { id: 9, english: "database", korean: "데이터베이스", pos: "noun", example: "Access the database." },
+                    { id: 10, english: "deadline", korean: "마감기한", pos: "noun", example: "Meet the deadline." },
+                    { id: 11, english: "debate", korean: "토론", pos: "noun", example: "Join the debate." },
+                    { id: 12, english: "debris", korean: "잔해", pos: "noun", example: "Clean up the debris." },
+                    { id: 13, english: "decade", korean: "십년", pos: "noun", example: "Over a decade ago." },
+                    { id: 14, english: "decentralize", korean: "분산시키다", pos: "verb", example: "Decentralize the system." },
+                    { id: 15, english: "decent", korean: "괜찮은", pos: "adjective", example: "A decent salary." },
+                    { id: 16, english: "decide", korean: "결정하다", pos: "verb", example: "Decide quickly." },
+                    { id: 17, english: "decision", korean: "결정", pos: "noun", example: "Make a final decision." },
+                    { id: 18, english: "declaration", korean: "선언", pos: "noun", example: "The declaration was announced." },
+                    { id: 19, english: "decline", korean: "거절하다", pos: "verb", example: "Decline the offer politely." },
+                    { id: 20, english: "decode", korean: "해독하다", pos: "verb", example: "Decode the message." },
+                    { id: 21, english: "dedicate", korean: "헌신하다", pos: "verb", example: "Dedicate yourself to work." },
+                    { id: 22, english: "deduction", korean: "공제", pos: "noun", example: "Tax deduction." },
+                    { id: 23, english: "defendant", korean: "피고", pos: "noun", example: "The defendant was acquitted." },
+                    { id: 24, english: "defense", korean: "방어", pos: "noun", example: "National defense." },
+                    { id: 25, english: "deficit", korean: "적자", pos: "noun", example: "Budget deficit." },
+                    { id: 26, english: "definite", korean: "확실한", pos: "adjective", example: "A definite answer." },
+                    { id: 27, english: "definition", korean: "정의", pos: "noun", example: "Give a clear definition." },
+                    { id: 28, english: "degree", korean: "학위", pos: "noun", example: "Earn a degree." },
+                    { id: 29, english: "deliberate", korean: "의도적인", pos: "adjective", example: "A deliberate choice." },
+                    { id: 30, english: "delicate", korean: "섬세한", pos: "adjective", example: "Delicate handling required." }
+                ]
+            };
+        }
 
-    if(mode==='mc') displayMCQuestion();
-    else displayTPQuestion();
-}
+        // localStorage에서 진행 상태 로드
+        function loadProgressFromStorage() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (!saved) {
+                initializeProgress();
+                return;
+            }
+            window.progress = JSON.parse(saved);
+        }
 
-// MC 문제
-function displayMCQuestion() {
-    if(currentQuestionIndex>=currentQuestions.length) { showResultModal(); return; }
-    answered=false;
-    document.getElementById('mcFeedback').classList.remove('show');
-    document.getElementById('mcNextBtn').disabled=true;
+        // 진행 상태 초기화
+        function initializeProgress() {
+            window.progress = {
+                levels: {}
+            };
+            for (let i = 1; i <= 5; i++) {
+                window.progress.levels[i] = {
+                    mcPassed: false,
+                    tpPassed: false,
+                    mcScore: 0,
+                    tpScore: 0,
+                    mcTotal: 0,
+                    tpTotal: 0
+                };
+            }
+            saveProgressToStorage();
+        }
 
-    const q = currentQuestions[currentQuestionIndex];
-    document.getElementById('koreanWord').innerHTML = `<div class="pos-label">(${q.pos})</div>${q.korean}`;
+        // localStorage에 진행 상태 저장
+        function saveProgressToStorage() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(window.progress));
+        }
 
-    if(!document.getElementById('mcExampleSentence')) {
-        const exampleDiv = document.createElement('div');
-        exampleDiv.id='mcExampleSentence';
-        exampleDiv.className='example-sentence';
-        document.getElementById('mcMode').appendChild(exampleDiv);
-    }
-    document.getElementById('mcExampleSentence').textContent = `"${q.example}"`;
+        // 레벨 선택 화면 렌더링
+        function renderLevelSelection() {
+            const levelGrid = document.getElementById('levelGrid');
+            levelGrid.innerHTML = '';
+            
+            const levelIcons = ['🐱', '👸', '🐺', '☕', '⚡'];
 
-    const answers=[q.english];
-    const others=currentQuestions.filter(x=>x.id!==q.id);
-    while(answers.length<4) {
-        const r=others[Math.floor(Math.random()*others.length)].english;
-        if(!answers.includes(r)) answers.push(r);
-    }
-    answers.sort(()=>Math.random()-0.5);
+            for (let i = 1; i <= 5; i++) {
+                const levelInfo = window.progress.levels[i];
+                const isUnlocked = i === 1 || (window.progress.levels[i - 1].mcPassed && window.progress.levels[i - 1].tpPassed);
+                
+                const card = document.createElement('div');
+                card.className = `level-card ${isUnlocked ? '' : 'disabled'}`;
 
-    const choicesDiv=document.getElementById('choices');
-    choicesDiv.innerHTML='';
-    answers.forEach((a, idx)=>{
-        const btn=document.createElement('button');
-        btn.className='choice-btn';
-        btn.textContent=a;
-        btn.onclick=()=>selectMCAnswer(a,q.english,idx);
-        choicesDiv.appendChild(btn);
-    });
-}
+                let statusHTML = '';
+                if (levelInfo.mcPassed && levelInfo.tpPassed) {
+                    statusHTML = '<div class="status-badge">✓ 완료</div>';
+                }
 
-function selectMCAnswer(selected, correct, idx){
-    if(answered) return;
-    answered=true;
-    const isCorrect=selected===correct;
-    if(isCorrect) score++;
+                let scoreHTML = '';
+                if (levelInfo.mcTotal > 0 || levelInfo.tpTotal > 0) {
+                    scoreHTML = '<div class="score-display">';
+                    if (levelInfo.mcTotal > 0) {
+                        scoreHTML += `<span class="mc-score">MC: ${levelInfo.mcScore}/${levelInfo.mcTotal}</span>`;
+                    }
+                    if (levelInfo.tpTotal > 0) {
+                        scoreHTML += `<span class="tp-score">TP: ${levelInfo.tpScore}/${levelInfo.tpTotal}</span>`;
+                    }
+                    scoreHTML += '</div>';
+                }
 
-    const choiceBtns=document.querySelectorAll('.choice-btn');
-    choiceBtns.forEach((btn,i)=>{
-        btn.disabled=true;
-        if(i===idx) btn.classList.add('selected', isCorrect?'correct':'incorrect');
-    });
+                card.innerHTML = `
+                    <div class="level-icon">${levelIcons[i-1]}</div>
+                    <div class="level-title">Level ${i}</div>
+                    <div class="mode-buttons">
+                        <button class="mode-btn mc" ${isUnlocked ? '' : 'disabled'} onclick="startMode(${i}, 'mc')">
+                            Multiple Choice
+                        </button>
+                        <button class="mode-btn tp" ${isUnlocked ? '' : 'disabled'} onclick="startMode(${i}, 'tp')">
+                            Typing Practice
+                        </button>
+                    </div>
+                    ${scoreHTML}
+                    ${statusHTML}
+                `;
+                levelGrid.appendChild(card);
+            }
 
-    const feedback=document.getElementById('mcFeedback');
-    feedback.textContent=isCorrect?'✓ 정답입니다!':`✗ 오답입니다. 정답: ${correct}`;
-    feedback.classList.add('show', isCorrect?'correct':'incorrect');
-    document.getElementById('mcNextBtn').disabled=false;
-}
+            document.getElementById('levelSelection').style.display = 'block';
+            document.getElementById('learningMode').classList.remove('active');
+        }
 
-function nextMCQuestion(){
-    currentQuestionIndex++;
-    if(currentQuestionIndex>=currentQuestions.length) showResultModal();
-    else displayMCQuestion();
-}
+        // 학습 모드 시작
+        function startMode(level, mode) {
+            currentLevel = level;
+            currentMode = mode;
+            currentQuestionIndex = 0;
+            score = 0;
+            answered = false;
 
-// TP 문제
-function displayTPQuestion(){
-    if(currentQuestionIndex>=currentQuestions.length) { showResultModal(); return; }
-    answered=false;
-    document.getElementById('tpFeedback').classList.remove('show');
-    document.getElementById('tpSubmitBtn').disabled=false;
+            // 문제 순서 랜덤화
+            currentQuestions = [...levelData[level]].sort(() => Math.random() - 0.5);
 
-    const q=currentQuestions[currentQuestionIndex];
-    document.getElementById('posLabel').textContent=`(${q.pos})`;
-    document.getElementById('englishWord').textContent=q.english;
-    document.getElementById('exampleSentence').textContent=`"${q.example}"`;
+            document.getElementById('levelSelection').style.display = 'none';
+            document.getElementById('learningMode').classList.add('active');
 
-    const inputBoxes=document.getElementById('inputBoxes');
-    inputBoxes.innerHTML='';
-    for(let i=0;i<q.korean.length;i++){
-        const input=document.createElement('input');
-        input.type='text';
-        input.className='input-box';
-        input.maxLength=1;
-        input.onkeydown=(e)=>{
-            if(e.key==='Backspace'){ e.preventDefault(); input.value=''; if(i>0) inputBoxes.children[i-1].focus();}
-            if(e.key==='Enter'){ e.preventDefault(); submitTypingPractice();}
-        };
-        inputBoxes.appendChild(input);
-    }
-    if(inputBoxes.children.length>0) inputBoxes.children[0].focus();
-}
+            // 모드별 UI 표시
+            document.getElementById('mcMode').style.display = mode === 'mc' ? 'block' : 'none';
+            document.getElementById('tpMode').style.display = mode === 'tp' ? 'block' : 'none';
 
-function submitTypingPractice(){
-    if(answered) return;
-    answered=true;
-    const q=currentQuestions[currentQuestionIndex];
-    const inputBoxes=Array.from(document.querySelectorAll('.input-box'));
-    const userAnswer=inputBoxes.map(box=>box.value).join('');
-    const isCorrect=userAnswer===q.korean;
-    if(isCorrect) score++;
+            const modeTitle = mode === 'mc' ? `Level ${level} - Multiple Choice` : `Level ${level} - Typing Practice`;
+            document.getElementById('modeTitle').textContent = modeTitle;
 
-    inputBoxes.forEach((box,idx)=>{
-        box.disabled=true;
-        if(userAnswer[idx]===q.korean[idx]) box.classList.add('correct');
-        else box.classList.add('incorrect');
-    });
+            if (mode === 'mc') {
+                displayMCQuestion();
+            } else {
+                displayTPQuestion();
+            }
+        }
 
-    const feedback=document.getElementById('tpFeedback');
-    feedback.textContent=isCorrect?'✓ 정답입니다!':`✗ 오답입니다. 정답: ${q.korean}`;
-    feedback.classList.add('show', isCorrect?'correct':'incorrect');
-    document.getElementById('tpSubmitBtn').disabled=true;
-}
+        // Multiple Choice 문제 표시
+        function displayMCQuestion() {
+            if (currentQuestionIndex >= currentQuestions.length) {
+                showResultModal();
+                return;
+            }
 
-// 결과
-function showResultModal(){
-    const total=currentQuestions.length;
-    const passScore=Math.ceil(total*0.9);
-    const passed=score>=passScore;
-    alert(`테스트 완료!\n점수: ${score}/${total}\n${passed?'합격!':'불합격'}`);
+            answered = false;
+            document.getElementById('mcFeedback').classList.remove('show', 'correct', 'incorrect');
+            document.getElementById('mcNextBtn').disabled = true;
 
-    const levelInfo=window.progress.levels[currentLevel];
-    if(currentMode==='mc'){ levelInfo.mcScore=score; if(passed) levelInfo.mcPassed=true;}
-    if(currentMode==='tp'){ levelInfo.tpScore=score; if(passed) levelInfo.tpPassed=true;}
-    saveProgressToStorage();
-    renderLevelSelection();
-}
-</script>
+            const question = currentQuestions[currentQuestionIndex];
+            document.getElementById('mcPosLabel').textContent = `(${question.pos})`;
+            document.getElementById('koreanWord').textContent = question.korean;
+            document.getElementById('mcExampleSentence').textContent = `"${question.korExample}"`;
+
+            // 보기 생성 (정답 + 3개 오답)
+            const answers = [question.english];
+            const otherWords = currentQuestions.filter(q => q.id !== question.id);
+            while (answers.length < 4) {
+                const randomWord = otherWords[Math.floor(Math.random() * otherWords.length)].english;
+                if (!answers.includes(randomWord)) {
+                    answers.push(randomWord);
+                }
+            }
+            answers.sort(() => Math.random() - 0.5);
+
+            const choicesDiv = document.getElementById('choices');
+            choicesDiv.innerHTML = '';
+            answers.forEach((answer, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'choice-btn';
+                btn.textContent = answer;
+                btn.onclick = () => selectMCAnswer(answer, question.english, idx);
+                choicesDiv.appendChild(btn);
+            });
+
+            updateProgress();
+            
+            // Enter 키로 다음 문제 넘기기
+            document.addEventListener('keydown', handleMCEnter);
+        }
+
+        function handleMCEnter(e) {
+            if (e.key === 'Enter' && !document.getElementById('mcNextBtn').disabled) {
+                nextMCQuestion();
+            }
+        }
+
+        // MC 답변 선택
+        function selectMCAnswer(selected, correct, idx) {
+            const isCorrect = selected === correct;
+            
+            if (!answered && isCorrect) {
+                answered = true;
+                score++;
+            }
+
+            const choiceBtns = document.querySelectorAll('.choice-btn');
+            choiceBtns[idx].classList.add('selected', isCorrect ? 'correct' : 'incorrect');
+
+            if (isCorrect) {
+                choiceBtns.forEach(btn => btn.disabled = true);
+                const feedback = document.getElementById('mcFeedback');
+                feedback.textContent = '✓ 정답입니다!';
+                feedback.classList.add('show', 'correct');
+                document.getElementById('mcNextBtn').disabled = false;
+            } else {
+                const feedback = document.getElementById('mcFeedback');
+                feedback.textContent = '✗ 다시 선택해주세요.';
+                feedback.classList.add('show', 'incorrect');
+                setTimeout(() => {
+                    choiceBtns[idx].classList.remove('selected', 'incorrect');
+                    feedback.classList.remove('show', 'incorrect');
+                }, 800);
+            }
+        }
+
+        // MC 다음 문제
+        function nextMCQuestion() {
+            document.removeEventListener('keydown', handleMCEnter);
+            currentQuestionIndex++;
+            if (currentQuestionIndex >= currentQuestions.length) {
+                showResultModal();
+            } else {
+                displayMCQuestion();
+            }
+        }
+
+        // Typing Practice 문제 표시
+        function displayTPQuestion() {
+            if (currentQuestionIndex >= currentQuestions.length) {
+                showResultModal();
+                return;
+            }
+
+            answered = false;
+            document.getElementById('tpFeedback').classList.remove('show', 'correct', 'incorrect');
+            document.getElementById('tpSubmitBtn').disabled = false;
+            document.getElementById('tpSubmitBtn').style.display = 'inline-block';
+            
+            const tpNextBtn = document.getElementById('tpNextBtn');
+            if (tpNextBtn) {
+                tpNextBtn.style.display = 'none';
+            }
+
+            const question = currentQuestions[currentQuestionIndex];
+            document.getElementById('posLabel').textContent = `(${question.pos})`;
+            document.getElementById('englishWord').textContent = question.english;
+            document.getElementById('exampleSentence').textContent = `"${question.example}"`;
+
+            // 입력 박스 생성
+            const inputBoxes = document.getElementById('inputBoxes');
+            inputBoxes.innerHTML = '';
+            
+            for (let i = 0; i < question.korean.length; i++) {
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = 'input-box';
+                input.dataset.index = i;
+                input.maxLength = 1;
+                
+                let composing = false;
+                
+                // 한글 조합 시작
+                input.addEventListener('compositionstart', () => {
+                    composing = true;
+                });
+                
+                // 한글 조합 종료
+                input.addEventListener('compositionend', (e) => {
+                    composing = false;
+                    const value = e.target.value;
+                    if (value.length === 1 && i < question.korean.length - 1) {
+                        setTimeout(() => {
+                            inputBoxes.children[i + 1].focus();
+                        }, 0);
+                    }
+                });
+
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace') {
+                        if (input.value === '' && i > 0) {
+                            e.preventDefault();
+                            inputBoxes.children[i - 1].focus();
+                        }
+                    } else if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (document.getElementById('tpSubmitBtn').style.display !== 'none') {
+                            submitTypingPractice();
+                        } else {
+                            nextTPQuestion();
+                        }
+                    }
+                });
+
+                inputBoxes.appendChild(input);
+            }
+
+            if (inputBoxes.children.length > 0) {
+                inputBoxes.children[0].focus();
+            }
+
+            updateProgress();
+        }
+
+        // TP 제출
+        function submitTypingPractice() {
+            if (answered) return;
+            answered = true;
+
+            const question = currentQuestions[currentQuestionIndex];
+            const inputBoxes = Array.from(document.querySelectorAll('.input-box'));
+            const userAnswer = inputBoxes.map(box => box.value).join('');
+            const isCorrect = userAnswer === question.korean;
+
+            if (isCorrect) score++;
+
+            inputBoxes.forEach((box, idx) => {
+                box.disabled = true;
+                if (userAnswer[idx] === question.korean[idx]) {
+                    box.classList.add('correct');
+                } else {
+                    box.classList.add('incorrect');
+                }
+            });
+
+            const feedback = document.getElementById('tpFeedback');
+            feedback.textContent = isCorrect ? '✓ 정답입니다!' : `✗ 오답입니다. 정답: ${question.korean}`;
+            feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
+
+            document.getElementById('tpSubmitBtn').style.display = 'none';
+            document.getElementById('tpNextBtn').style.display = 'inline-block';
+            document.getElementById('tpNextBtn').disabled = false;
+        }
+
+        // TP 다음 문제
+        function nextTPQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex >= currentQuestions.length) {
+                showResultModal();
+            } else {
+                displayTPQuestion();
+            }
+        }
+
+        // 결과 모달 표시
+        function showResultModal() {
+            const totalQuestions = currentQuestions.length;
+            const passScore = Math.ceil(totalQuestions * 0.9); // 90% 이상
+            const isPassed = score >= passScore;
+            const percentage = Math.round((score / totalQuestions) * 100);
+
+            let resultTitle = '';
+            if (isPassed) {
+                resultTitle = currentMode === 'mc' ? 'Schönen Tag 🎉' : 'Tschüssikowski! 🎊';
+            } else {
+                resultTitle = '다시 시도해주세요 📝';
+            }
+
+            document.getElementById('resultTitle').textContent = resultTitle;
+            document.getElementById('resultScore').textContent = `${score} / ${totalQuestions}`;
+            document.getElementById('resultMessage').textContent = `정답률: ${percentage}% ${isPassed ? '통과했습니다!' : '통과하지 못했습니다.'}`;
+
+            // 진행 상태 저장
+            if (currentMode === 'mc') {
+                window.progress.levels[currentLevel].mcScore = score;
+                window.progress.levels[currentLevel].mcTotal = totalQuestions;
+                if (isPassed) {
+                    window.progress.levels[currentLevel].mcPassed = true;
+                }
+            } else {
+                window.progress.levels[currentLevel].tpScore = score;
+                window.progress.levels[currentLevel].tpTotal = totalQuestions;
+                if (isPassed) {
+                    window.progress.levels[currentLevel].tpPassed = true;
+                }
+            }
+            saveProgressToStorage();
+
+            // 레벨 클리어 확인 및 축하 메시지
+            const levelInfo = window.progress.levels[currentLevel];
+            const previousMCPassed = currentMode === 'tp' && levelInfo.mcPassed;
+            const previousTPPassed = currentMode === 'mc' && levelInfo.tpPassed;
+            
+            if (levelInfo.mcPassed && levelInfo.tpPassed && isPassed && (previousMCPassed || previousTPPassed)) {
+                setTimeout(() => {
+                    alert('갈채! 해냈어 애기! 기특해. 공부도 중요하지만 당신을 항상 아껴주기! 🦐💖');
+                }, 500);
+            }
+
+            document.getElementById('resultModal').classList.add('show');
+        }
+
+        // 재시도
+        function retryMode() {
+            document.getElementById('resultModal').classList.remove('show');
+            startMode(currentLevel, currentMode);
+        }
+
+        // 돌아가기
+        function backToLevelSelection() {
+            document.getElementById('resultModal').classList.remove('show');
+            document.getElementById('learningMode').classList.remove('active');
+            renderLevelSelection();
+        }
+
+        // 진행률 업데이트
+        function updateProgress() {
+            const total = currentQuestions.length;
+            const current = currentQuestionIndex + 1;
+            document.getElementById('questionCounter').textContent = `${current} / ${total}`;
+            const percentage = (current / total) * 100;
+            document.getElementById('progressFill').style.width = `${percentage}%`;
+        }
+
+        // 앱 시작
+        window.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
 </body>
 </html>
