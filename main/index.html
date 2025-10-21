@@ -1278,6 +1278,9 @@ function loadLevelData() {
                 return;
             }
 
+            // ensure MC global handler not active
+            document.removeEventListener('keydown', handleMCEnter);
+
             answered = false;
             document.getElementById('tpFeedback').classList.remove('show', 'correct', 'incorrect');
             document.getElementById('tpSubmitBtn').disabled = false;
@@ -1327,6 +1330,7 @@ function loadLevelData() {
                         }
                     } else if (e.key === 'Enter') {
                         e.preventDefault();
+                        // If submit button is visible -> submit, otherwise go next
                         if (document.getElementById('tpSubmitBtn').style.display !== 'none') {
                             submitTypingPractice();
                         } else {
@@ -1343,6 +1347,27 @@ function loadLevelData() {
             }
 
             updateProgress();
+
+            // add global Enter handler for TP so Enter works even if inputs are disabled after 제출
+            // remove first to avoid duplicate listeners
+            document.removeEventListener('keydown', handleTPEnter);
+            document.addEventListener('keydown', handleTPEnter);
+        }
+
+        function handleTPEnter(e) {
+            if (e.key !== 'Enter') return;
+            e.preventDefault();
+            const tpSubmitBtn = document.getElementById('tpSubmitBtn');
+            const tpNextBtn = document.getElementById('tpNextBtn');
+
+            if (tpSubmitBtn && tpSubmitBtn.style.display !== 'none' && !tpSubmitBtn.disabled) {
+                submitTypingPractice();
+                return;
+            }
+            if (tpNextBtn && tpNextBtn.style.display !== 'none' && !tpNextBtn.disabled) {
+                nextTPQuestion();
+                return;
+            }
         }
 
         function submitTypingPractice() {
@@ -1381,10 +1406,15 @@ function loadLevelData() {
             if (tpNextBtn) {
                 tpNextBtn.style.display = 'inline-block';
                 tpNextBtn.disabled = false;
+                // 포커스 이동: 사용자가 Enter로 다음을 누를 수 있게 함
+                tpNextBtn.focus();
             }
         }
 
         function nextTPQuestion() {
+            // remove TP global handler to avoid duplicates
+            document.removeEventListener('keydown', handleTPEnter);
+
             currentQuestionIndex++;
             if (currentQuestionIndex >= currentQuestions.length) {
                 showResultModal();
