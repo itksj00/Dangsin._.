@@ -34,6 +34,14 @@
             margin-bottom: 10px;
         }
 
+        /* 새우 이모지 복제: 오른쪽에 좌우 반전된 새우 추가 */
+        .mirror-shrimp {
+            display: inline-block;
+            transform: scaleX(-1);
+            margin-left: 8px;
+            /* 필요하면 font-size로 크기 조절 */
+        }
+
         .level-selection {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -700,7 +708,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🦐 Shrimp</h1>
+            <h1>🦐 Shrimp<span class="mirror-shrimp" aria-hidden="true">🦐</span></h1>
             <p>당신을 위한 나의 마음</p>
         </div>
 
@@ -1187,7 +1195,20 @@ function loadLevelData() {
                 const btn = document.createElement('button');
                 btn.className = 'choice-btn';
                 btn.textContent = answer;
+                // 마우스 클릭 처리
                 btn.onclick = function() { selectMCAnswer(answer, question.english, idx); };
+                // 키보드 Enter 처리: 선택 전 Enter는 선택, 선택 후 Enter는 다음으로
+                btn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (!answered) {
+                            selectMCAnswer(answer, question.english, idx);
+                        } else {
+                            const nextBtn = document.getElementById('mcNextBtn');
+                            if (nextBtn && !nextBtn.disabled) nextMCQuestion();
+                        }
+                    }
+                });
                 choicesDiv.appendChild(btn);
             });
 
