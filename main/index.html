@@ -1,202 +1,3 @@
-function loadLevelData() {
-            levelData = {
-                1: [
-                    {id:1,english:"consequence",korean:"결과",pos:"noun",example:"This has serious consequences.",korExample:"이것은 심각한 결과를 초래합니다."},
-                    {id:2,english:"phenomenon",korean:"현상",pos:"noun",example:"A natural phenomenon.",korExample:"자연 현상입니다."},
-                    {id:3,english:"fundamental",korean:"근본적인",pos:"adjective",example:"A fundamental principle.",korExample:"근본적인 원칙입니다."},
-                    {id:4,english:"aspect",korean:"측면",pos:"noun",example:"Consider every aspect.",korExample:"모든 측면을 고려하세요."},
-                    {id:5,english:"approach",korean:"접근법",pos:"noun",example:"A different approach.",korExample:"다른 접근법입니다."},
-                    {id:6,english:"perspective",korean:"관점",pos:"noun",example:"From my perspective.",korExample:"제 관점에서는요."},
-                    {id:7,english:"constitute",korean:"구성하다",pos:"verb",example:"These constitute the whole.",korExample:"이것들이 전체를 구성합니다."},
-                    {id:8,english:"implement",korean:"시행하다",pos:"verb",example:"Implement the plan.",korExample:"계획을 시행하세요."},
-                    {id:9,english:"enhance",korean:"향상시키다",pos:"verb",example:"Enhance your skills.",korExample:"기술을 향상시키세요."},
-                    {id:10,english:"demonstrate",korean:"입증하다",pos:"verb",example:"Demonstrate your ability.",korExample:"능력을 입증하세요."},
-                    {id:11,english:"significant",korean:"중요한",pos:"adjective",example:"A significant change.",korExample:"중요한 변화입니다."},
-                    {id:12,english:"sufficient",korean:"충분한",pos:"adjective",example:"Sufficient evidence.",korExample:"충분한 증거입니다."},
-                    {id:13,english:"comprehensive",korean:"포괄적인",pos:"adjective",example:"A comprehensive review.",korExample:"포괄적인 검토입니다."},
-                    {id:14,english:"diverse",korean:"다양한",pos:"adjective",example:"Diverse opinions.",korExample:"다양한 의견들입니다."},
-                    {id:15,english:"explicit",korean:"명시적인",pos:"adjective",example:"Explicit instructions.",korExample:"명시적인 지시사항입니다."},
-                    {id:16,english:"inevitable",korean:"불가피한",pos:"adjective",example:"An inevitable result.",korExample:"불가피한 결과입니다."},
-                    {id:17,english:"prominent",korean:"두드러진",pos:"adjective",example:"A prominent figure.",korExample:"두드러진 인물입니다."},
-                    {id:18,english:"substantial",korean:"상당한",pos:"adjective",example:"Substantial progress.",korExample:"상당한 진전입니다."},
-                    {id:19,english:"tentative",korean:"잠정적인",pos:"adjective",example:"A tentative plan.",korExample:"잠정적인 계획입니다."},
-                    {id:20,english:"arbitrary",korean:"임의적인",pos:"adjective",example:"An arbitrary decision.",korExample:"임의적인 결정입니다."},
-                    {id:21,english:"acknowledge",korean:"인정하다",pos:"verb",example:"Acknowledge the truth.",korExample:"진실을 인정하세요."},
-                    {id:22,english:"anticipate",korean:"예상하다",pos:"verb",example:"Anticipate problems.",korExample:"문제를 예상하세요."},
-                    {id:23,english:"comprehend",korean:"이해하다",pos:"verb",example:"Comprehend the concept.",korExample:"개념을 이해하세요."},
-                    {id:24,english:"discern",korean:"식별하다",pos:"verb",example:"Discern the difference.",korExample:"차이를 식별하세요."},
-                    {id:25,english:"elaborate",korean:"상세히 설명하다",pos:"verb",example:"Elaborate on your idea.",korExample:"아이디어를 상세히 설명하세요."},
-                    {id:26,english:"formulate",korean:"공식화하다",pos:"verb",example:"Formulate a strategy.",korExample:"전략을 공식화하세요."},
-                    {id:27,english:"initiate",korean:"시작하다",pos:"verb",example:"Initiate the process.",korExample:"과정을 시작하세요."},
-                    {id:28,english:"manipulate",korean:"조작하다",pos:"verb",example:"Manipulate the data.",korExample:"데이터를 조작하다."},
-                    {id:29,english:"perceive",korean:"인식하다",pos:"verb",example:"Perceive the reality.",korExample:"현실을 인식하세요."},
-                    {id:30,english:"refine",korean:"개선하다",pos:"verb",example:"Refine your technique.",korExample:"기술을 개선하세요."},
-                    {id:31,english:"synthesis",korean:"종합",pos:"noun",example:"A synthesis of ideas.",korExample:"아이디어의 종합입니다."},
-                    {id:32,english:"proportion",korean:"비율",pos:"noun",example:"The right proportion.",korExample:"올바른 비율입니다."},
-                    {id:33,english:"criterion",korean:"기준",pos:"noun",example:"Meet the criterion.",korExample:"기준을 충족하세요."},
-                    {id:34,english:"hypothesis",korean:"가설",pos:"noun",example:"Test the hypothesis.",korExample:"가설을 검증하세요."},
-                    {id:35,english:"context",korean:"맥락",pos:"noun",example:"Understand the context.",korExample:"맥락을 이해하세요."}
-                ],
-                2: [
-                    {id:1,english:"infrastructure",korean:"기반시설",pos:"noun",example:"Build infrastructure.",korExample:"기반시설을 건설하세요."},
-                    {id:2,english:"sovereignty",korean:"주권",pos:"noun",example:"National sovereignty.",korExample:"국가 주권입니다."},
-                    {id:3,english:"authenticity",korean:"진정성",pos:"noun",example:"Question its authenticity.",korExample:"진정성을 의심하세요."},
-                    {id:4,english:"designation",korean:"지정",pos:"noun",example:"Official designation.",korExample:"공식 지정입니다."},
-                    {id:5,english:"equilibrium",korean:"균형",pos:"noun",example:"Maintain equilibrium.",korExample:"균형을 유지하세요."},
-                    {id:6,english:"proliferation",korean:"확산",pos:"noun",example:"Nuclear proliferation.",korExample:"핵 확산입니다."},
-                    {id:7,english:"predecessor",korean:"전임자",pos:"noun",example:"My predecessor left.",korExample:"제 전임자가 떠났습니다."},
-                    {id:8,english:"counterpart",korean:"상대방",pos:"noun",example:"Meet your counterpart.",korExample:"상대방을 만나세요."},
-                    {id:9,english:"ambiguity",korean:"모호함",pos:"noun",example:"Remove the ambiguity.",korExample:"모호함을 제거하세요."},
-                    {id:10,english:"encompass",korean:"포함하다",pos:"verb",example:"Encompass all aspects.",korExample:"모든 측면을 포함하세요."},
-                    {id:11,english:"facilitate",korean:"촉진하다",pos:"verb",example:"Facilitate discussion.",korExample:"토론을 촉진하세요."},
-                    {id:12,english:"substantiate",korean:"입증하다",pos:"verb",example:"Substantiate your claim.",korExample:"주장을 입증하세요."},
-                    {id:13,english:"differentiate",korean:"구별하다",pos:"verb",example:"Differentiate between them.",korExample:"그것들을 구별하세요."},
-                    {id:14,english:"consolidate",korean:"통합하다",pos:"verb",example:"Consolidate power.",korExample:"권력을 통합하세요."},
-                    {id:15,english:"deteriorate",korean:"악화되다",pos:"verb",example:"Conditions deteriorate.",korExample:"상황이 악화됩니다."},
-                    {id:16,english:"perpetuate",korean:"영속화하다",pos:"verb",example:"Perpetuate the tradition.",korExample:"전통을 영속화하세요."},
-                    {id:17,english:"subordinate",korean:"종속시키다",pos:"verb",example:"Subordinate to authority.",korExample:"권위에 종속시키다."},
-                    {id:18,english:"prevalent",korean:"만연한",pos:"adjective",example:"A prevalent belief.",korExample:"만연한 믿음입니다."},
-                    {id:19,english:"coherent",korean:"일관된",pos:"adjective",example:"A coherent argument.",korExample:"일관된 주장입니다."},
-                    {id:20,english:"ambiguous",korean:"애매한",pos:"adjective",example:"An ambiguous answer.",korExample:"애매한 답변입니다."},
-                    {id:21,english:"plausible",korean:"그럴듯한",pos:"adjective",example:"A plausible explanation.",korExample:"그럴듯한 설명입니다."},
-                    {id:22,english:"rigorous",korean:"엄격한",pos:"adjective",example:"Rigorous standards.",korExample:"엄격한 기준입니다."},
-                    {id:23,english:"obsolete",korean:"쓸모없는",pos:"adjective",example:"Obsolete technology.",korExample:"쓸모없는 기술입니다."},
-                    {id:24,english:"concurrent",korean:"동시의",pos:"adjective",example:"Concurrent events.",korExample:"동시의 사건들입니다."},
-                    {id:25,english:"intrinsic",korean:"본질적인",pos:"adjective",example:"Intrinsic value.",korExample:"본질적인 가치입니다."},
-                    {id:26,english:"inherent",korean:"내재된",pos:"adjective",example:"Inherent risk.",korExample:"내재된 위험입니다."},
-                    {id:27,english:"preliminary",korean:"예비의",pos:"adjective",example:"Preliminary results.",korExample:"예비 결과입니다."},
-                    {id:28,english:"terminology",korean:"용어",pos:"noun",example:"Technical terminology.",korExample:"기술 용어입니다."},
-                    {id:29,english:"analogy",korean:"유추",pos:"noun",example:"Draw an analogy.",korExample:"유추를 하세요."},
-                    {id:30,english:"entity",korean:"실체",pos:"noun",example:"A legal entity.",korExample:"법적 실체입니다."},
-                    {id:31,english:"remnant",korean:"잔재",pos:"noun",example:"A remnant of the past.",korExample:"과거의 잔재입니다."},
-                    {id:32,english:"spectrum",korean:"범위",pos:"noun",example:"A wide spectrum.",korExample:"넓은 범위입니다."},
-                    {id:33,english:"excerpt",korean:"발췌",pos:"noun",example:"An excerpt from a book.",korExample:"책에서의 발췌입니다."},
-                    {id:34,english:"notion",korean:"개념",pos:"noun",example:"A vague notion.",korExample:"모호한 개념입니다."},
-                    {id:35,english:"doctrine",korean:"교리",pos:"noun",example:"Religious doctrine.",korExample:"종교적 교리입니다."}
-                ],
-                3: [
-                    {id:1,english:"disposition",korean:"성향",pos:"noun",example:"A cheerful disposition.",korExample:"쾌활한 성향입니다."},
-                    {id:2,english:"inclination",korean:"경향",pos:"noun",example:"A natural inclination.",korExample:"자연스러운 경향입니다."},
-                    {id:3,english:"integrity",korean:"완전성",pos:"noun",example:"Structural integrity.",korExample:"구조적 완전성입니다."},
-                    {id:4,english:"constraint",korean:"제약",pos:"noun",example:"Budget constraints.",korExample:"예산 제약입니다."},
-                    {id:5,english:"implication",korean:"함의",pos:"noun",example:"The implication is clear.",korExample:"함의가 명확합니다."},
-                    {id:6,english:"manifestation",korean:"표출",pos:"noun",example:"A manifestation of fear.",korExample:"두려움의 표출입니다."},
-                    {id:7,english:"proposition",korean:"제안",pos:"noun",example:"An interesting proposition.",korExample:"흥미로운 제안입니다."},
-                    {id:8,english:"discourse",korean:"담론",pos:"noun",example:"Political discourse.",korExample:"정치적 담론입니다."},
-                    {id:9,english:"correlation",korean:"상관관계",pos:"noun",example:"A strong correlation.",korExample:"강한 상관관계입니다."},
-                    {id:10,english:"exacerbate",korean:"악화시키다",pos:"verb",example:"Exacerbate the problem.",korExample:"문제를 악화시키다."},
-                    {id:11,english:"alleviate",korean:"완화하다",pos:"verb",example:"Alleviate the pain.",korExample:"고통을 완화하세요."},
-                    {id:12,english:"ascertain",korean:"확인하다",pos:"verb",example:"Ascertain the facts.",korExample:"사실을 확인하세요."},
-                    {id:13,english:"circumvent",korean:"우회하다",pos:"verb",example:"Circumvent the rules.",korExample:"규칙을 우회하다."},
-                    {id:14,english:"corroborate",korean:"확증하다",pos:"verb",example:"Corroborate the story.",korExample:"이야기를 확증하세요."},
-                    {id:15,english:"elucidate",korean:"명료하게 하다",pos:"verb",example:"Elucidate the concept.",korExample:"개념을 명료하게 하세요."},
-                    {id:16,english:"extrapolate",korean:"추정하다",pos:"verb",example:"Extrapolate from data.",korExample:"데이터에서 추정하세요."},
-                    {id:17,english:"preclude",korean:"배제하다",pos:"verb",example:"Preclude the possibility.",korExample:"가능성을 배제하세요."},
-                    {id:18,english:"vindicate",korean:"정당화하다",pos:"verb",example:"Vindicate her decision.",korExample:"그녀의 결정을 정당화하세요."},
-                    {id:19,english:"convoluted",korean:"복잡한",pos:"adjective",example:"A convoluted argument.",korExample:"복잡한 주장입니다."},
-                    {id:20,english:"meticulous",korean:"꼼꼼한",pos:"adjective",example:"Meticulous attention.",korExample:"꼼꼼한 주의입니다."},
-                    {id:21,english:"pragmatic",korean:"실용적인",pos:"adjective",example:"A pragmatic approach.",korExample:"실용적인 접근법입니다."},
-                    {id:22,english:"redundant",korean:"불필요한",pos:"adjective",example:"Redundant information.",korExample:"불필요한 정보입니다."},
-                    {id:23,english:"tangible",korean:"실질적인",pos:"adjective",example:"Tangible results.",korExample:"실질적인 결과입니다."},
-                    {id:24,english:"unequivocal",korean:"명백한",pos:"adjective",example:"An unequivocal statement.",korExample:"명백한 진술입니다."},
-                    {id:25,english:"viable",korean:"실행 가능한",pos:"adjective",example:"A viable solution.",korExample:"실행 가능한 해결책입니다."},
-                    {id:26,english:"volatile",korean:"변동성이 큰",pos:"adjective",example:"A volatile market.",korExample:"변동성이 큰 시장입니다."},
-                    {id:27,english:"adept",korean:"능숙한",pos:"adjective",example:"Adept at negotiation.",korExample:"협상에 능숙합니다."},
-                    {id:28,english:"astute",korean:"기민한",pos:"adjective",example:"An astute observation.",korExample:"기민한 관찰입니다."},
-                    {id:29,english:"delineation",korean:"서술",pos:"noun",example:"Clear delineation.",korExample:"명확한 서술입니다."},
-                    {id:30,english:"dichotomy",korean:"이분법",pos:"noun",example:"A false dichotomy.",korExample:"잘못된 이분법입니다."},
-                    {id:31,english:"anomaly",korean:"이상현상",pos:"noun",example:"Statistical anomaly.",korExample:"통계적 이상현상입니다."},
-                    {id:32,english:"epitome",korean:"전형",pos:"noun",example:"The epitome of elegance.",korExample:"우아함의 전형입니다."},
-                    {id:33,english:"endeavor",korean:"노력",pos:"noun",example:"A worthy endeavor.",korExample:"가치 있는 노력입니다."},
-                    {id:34,english:"magnitude",korean:"규모",pos:"noun",example:"The magnitude is huge.",korExample:"규모가 엄청납니다."},
-                    {id:35,english:"threshold",korean:"문턱",pos:"noun",example:"Cross the threshold.",korExample:"문턱을 넘으세요."}
-                ],
-                4: [
-                    {id:1,english:"benevolent",korean:"자비로운",pos:"adjective",example:"A benevolent leader.",korExample:"자비로운 지도자입니다."},
-                    {id:2,english:"conscientious",korean:"성실한",pos:"adjective",example:"A conscientious worker.",korExample:"성실한 근로자입니다."},
-                    {id:3,english:"diligent",korean:"부지런한",pos:"adjective",example:"A diligent student.",korExample:"부지런한 학생입니다."},
-                    {id:4,english:"eloquent",korean:"웅변적인",pos:"adjective",example:"An eloquent speech.",korExample:"웅변적인 연설입니다."},
-                    {id:5,english:"fervent",korean:"열렬한",pos:"adjective",example:"Fervent support.",korExample:"열렬한 지지입니다."},
-                    {id:6,english:"gregarious",korean:"사교적인",pos:"adjective",example:"A gregarious person.",korExample:"사교적인 사람입니다."},
-                    {id:7,english:"tenacious",korean:"완강한",pos:"adjective",example:"Tenacious determination.",korExample:"완강한 결의입니다."},
-                    {id:8,english:"resilient",korean:"회복력있는",pos:"adjective",example:"A resilient economy.",korExample:"회복력있는 경제입니다."},
-                    {id:9,english:"scrupulous",korean:"세심한",pos:"adjective",example:"Scrupulous attention.",korExample:"세심한 주의입니다."},
-                    {id:10,english:"judicious",korean:"현명한",pos:"adjective",example:"A judicious decision.",korExample:"현명한 결정입니다."},
-                    {id:11,english:"reciprocate",korean:"보답하다",pos:"verb",example:"Reciprocate the favor.",korExample:"호의에 보답하세요."},
-                    {id:12,english:"relinquish",korean:"포기하다",pos:"verb",example:"Relinquish control.",korExample:"통제를 포기하세요."},
-                    {id:13,english:"scrutinize",korean:"정밀조사하다",pos:"verb",example:"Scrutinize the document.",korExample:"문서를 정밀조사하세요."},
-                    {id:14,english:"stipulate",korean:"규정하다",pos:"verb",example:"Stipulate the terms.",korExample:"조건을 규정하세요."},
-                    {id:15,english:"supersede",korean:"대체하다",pos:"verb",example:"Supersede old rules.",korExample:"기존 규칙을 대체하세요."},
-                    {id:16,english:"transcend",korean:"초월하다",pos:"verb",example:"Transcend limitations.",korExample:"한계를 초월하세요."},
-                    {id:17,english:"undermine",korean:"훼손하다",pos:"verb",example:"Undermine authority.",korExample:"권위를 훼손하다."},
-                    {id:18,english:"advocate",korean:"옹호하다",pos:"verb",example:"Advocate for change.",korExample:"변화를 옹호하세요."},
-                    {id:19,english:"articulate",korean:"명확히 표현하다",pos:"verb",example:"Articulate your vision.",korExample:"비전을 명확히 표현하세요."},
-                    {id:20,english:"ambivalence",korean:"양가감정",pos:"noun",example:"Feel ambivalence.",korExample:"양가감정을 느낍니다."},
-                    {id:21,english:"complacency",korean:"자기만족",pos:"noun",example:"Avoid complacency.",korExample:"자기만족을 피하세요."},
-                    {id:22,english:"discrepancy",korean:"불일치",pos:"noun",example:"A discrepancy exists.",korExample:"불일치가 존재합니다."},
-                    {id:23,english:"precedent",korean:"전례",pos:"noun",example:"Set a precedent.",korExample:"전례를 남기세요."},
-                    {id:24,english:"ramification",korean:"파급효과",pos:"noun",example:"Consider ramifications.",korExample:"파급효과를 고려하세요."},
-                    {id:25,english:"synopsis",korean:"개요",pos:"noun",example:"Read the synopsis.",korExample:"개요를 읽으세요."},
-                    {id:26,english:"tenure",korean:"재임기간",pos:"noun",example:"During his tenure.",korExample:"그의 재임기간 동안입니다."},
-                    {id:27,english:"trajectory",korean:"궤적",pos:"noun",example:"Career trajectory.",korExample:"경력 궤적입니다."},
-                    {id:28,english:"acumen",korean:"통찰력",pos:"noun",example:"Business acumen.",korExample:"사업 통찰력입니다."},
-                    {id:29,english:"catalyst",korean:"촉매",pos:"noun",example:"A catalyst for change.",korExample:"변화의 촉매입니다."},
-                    {id:30,english:"negligible",korean:"무시할 만한",pos:"adjective",example:"Negligible difference.",korExample:"무시할 만한 차이입니다."},
-                    {id:31,english:"mundane",korean:"평범한",pos:"adjective",example:"Mundane tasks.",korExample:"평범한 업무입니다."},
-                    {id:32,english:"pervasive",korean:"만연한",pos:"adjective",example:"Pervasive influence.",korExample:"만연한 영향입니다."},
-                    {id:33,english:"dormant",korean:"휴면상태의",pos:"adjective",example:"Dormant volcano.",korExample:"휴면상태의 화산입니다."},
-                    {id:34,english:"imminent",korean:"임박한",pos:"adjective",example:"Imminent danger.",korExample:"임박한 위험입니다."},
-                    {id:35,english:"pivotal",korean:"중추적인",pos:"adjective",example:"A pivotal moment.",korExample:"중추적인 순간입니다."},
-                    {id:36,english:"sporadic",korean:"산발적인",pos:"adjective",example:"Sporadic outbreaks.",korExample:"산발적인 발병입니다."},
-                    {id:37,english:"transient",korean:"일시적인",pos:"adjective",example:"Transient phenomenon.",korExample:"일시적인 현상입니다."},
-                    {id:38,english:"ubiquitous",korean:"어디에나 있는",pos:"adjective",example:"Ubiquitous technology.",korExample:"어디에나 있는 기술입니다."},
-                    {id:39,english:"prudent",korean:"신중한",pos:"adjective",example:"A prudent approach.",korExample:"신중한 접근법입니다."},
-                    {id:40,english:"fortuitous",korean:"우연한",pos:"adjective",example:"A fortuitous encounter.",korExample:"우연한 만남입니다."}
-                ],
-                5: [
-                    {id:1,english:"ameliorate",korean:"개선하다",pos:"verb",example:"Ameliorate conditions.",korExample:"상황을 개선하세요."},
-                    {id:2,english:"obfuscate",korean:"모호하게 하다",pos:"verb",example:"Obfuscate the truth.",korExample:"진실을 모호하게 하다."},
-                    {id:3,english:"eradicate",korean:"근절하다",pos:"verb",example:"Eradicate poverty.",korExample:"빈곤을 근절하세요."},
-                    {id:4,english:"mitigate",korean:"완화하다",pos:"verb",example:"Mitigate the impact.",korExample:"영향을 완화하세요."},
-                    {id:5,english:"proliferate",korean:"급증하다",pos:"verb",example:"Weapons proliferate.",korExample:"무기가 급증합니다."},
-                    {id:6,english:"disseminate",korean:"보급하다",pos:"verb",example:"Disseminate information.",korExample:"정보를 보급하세요."},
-                    {id:7,english:"orchestrate",korean:"조직하다",pos:"verb",example:"Orchestrate a campaign.",korExample:"운동을 조직하세요."},
-                    {id:8,english:"repudiate",korean:"거부하다",pos:"verb",example:"Repudiate the claim.",korExample:"주장을 거부하세요."},
-                    {id:9,english:"reconcile",korean:"조화시키다",pos:"verb",example:"Reconcile differences.",korExample:"차이를 조화시키세요."},
-                    {id:10,english:"galvanize",korean:"자극하다",pos:"verb",example:"Galvanize support.",korExample:"지지를 자극하세요."},
-                    {id:11,english:"epitomize",korean:"전형이다",pos:"verb",example:"Epitomize excellence.",korExample:"우수성의 전형입니다."},
-                    {id:12,english:"substantive",korean:"실질적인",pos:"adjective",example:"Substantive change.",korExample:"실질적인 변화입니다."},
-                    {id:13,english:"egregious",korean:"지독한",pos:"adjective",example:"An egregious error.",korExample:"지독한 오류입니다."},
-                    {id:14,english:"flagrant",korean:"노골적인",pos:"adjective",example:"Flagrant violation.",korExample:"노골적인 위반입니다."},
-                    {id:15,english:"insidious",korean:"교활한",pos:"adjective",example:"An insidious threat.",korExample:"교활한 위협입니다."},
-                    {id:16,english:"inveterate",korean:"뿌리 깊은",pos:"adjective",example:"An inveterate habit.",korExample:"뿌리 깊은 습관입니다."},
-                    {id:17,english:"incorrigible",korean:"교정 불가능한",pos:"adjective",example:"Incorrigible behavior.",korExample:"교정 불가능한 행동입니다."},
-                    {id:18,english:"recalcitrant",korean:"완강한",pos:"adjective",example:"A recalcitrant attitude.",korExample:"완강한 태도입니다."},
-                    {id:19,english:"intransigent",korean:"타협하지 않는",pos:"adjective",example:"Intransigent position.",korExample:"타협하지 않는 입장입니다."},
-                    {id:20,english:"obdurate",korean:"완고한",pos:"adjective",example:"An obdurate refusal.",korExample:"완고한 거부입니다."},
-                    {id:21,english:"tenuous",korean:"희박한",pos:"adjective",example:"A tenuous connection.",korExample:"희박한 연결입니다."},
-                    {id:22,english:"perfunctory",korean:"형식적인",pos:"adjective",example:"Perfunctory effort.",korExample:"형식적인 노력입니다."},
-                    {id:23,english:"desultory",korean:"산만한",pos:"adjective",example:"Desultory conversation.",korExample:"산만한 대화입니다."},
-                    {id:24,english:"ephemeral",korean:"덧없는",pos:"adjective",example:"Ephemeral beauty.",korExample:"덧없는 아름다움입니다."},
-                    {id:25,english:"pernicious",korean:"해로운",pos:"adjective",example:"Pernicious influence.",korExample:"해로운 영향입니다."},
-                    {id:26,english:"inscrutable",korean:"불가해한",pos:"adjective",example:"An inscrutable expression.",korExample:"불가해한 표정입니다."},
-                    {id:27,english:"audacious",korean:"대담한",pos:"adjective",example:"An audacious plan.",korExample:"대담한 계획입니다."},
-                    {id:28,english:"proclivity",korean:"성벽",pos:"noun",example:"A proclivity for risk.",korExample:"위험에 대한 성벽입니다."},
-                    {id:29,english:"propensity",korean:"성향",pos:"noun",example:"A propensity to err.",korExample:"실수하는 성향입니다."},
-                    {id:30,english:"predilection",korean:"편애",pos:"noun",example:"A predilection for art.",korExample:"예술에 대한 편애입니다."},
-                    {id:31,english:"antithesis",korean:"정반대",pos:"noun",example:"The antithesis of good.",korExample:"선의 정반대입니다."},
-                    {id:32,english:"juxtaposition",korean:"병치",pos:"noun",example:"An interesting juxtaposition.",korExample:"흥미로운 병치입니다."},
-                    {id:33,english:"polarization",korean:"양극화",pos:"noun",example:"Political polarization.",korExample:"정치적 양극화입니다."},
-                    {id:34,english:"hegemony",korean:"패권",pos:"noun",example:"Cultural hegemony.",korExample:"문화적 패권입니다."},
-                    {id:35,english:"platitude",korean:"진부한 말",pos:"noun",example:"Empty platitudes.",korExample:"공허한 진부한 말입니다."},
-                    {id:36,english:"quandary",korean:"곤경",pos:"noun",example:"In a quandary.",korExample:"곤경에 처했습니다."},
-                    {id:37,english:"conundrum",korean:"난제",pos:"noun",example:"A difficult conundrum.",korExample:"어려운 난제입니다."},
-                    {id:38,english:"vicissitude",korean:"변천",pos:"noun",example:"Life's vicissitudes.",korExample:"인생의 변천입니다."},
-                    {id:39,english:"harbinger",korean:"전조",pos:"noun",example:"A harbinger of change.",korExample:"변화의 전조입니다."},
-                    {id:40,english:"confluence",korean:"합류",pos:"noun",example:"A confluence of events.",korExample:"사건들의 합류입니다."}
-                ]
-            };
-        }
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -1058,42 +859,202 @@ function loadLevelData() {
             saveStatsToStorage();
         }
 
-        function loadLevelData() {
+function loadLevelData() {
             levelData = {
                 1: [
                     {id:1,english:"consequence",korean:"결과",pos:"noun",example:"This has serious consequences.",korExample:"이것은 심각한 결과를 초래합니다."},
                     {id:2,english:"phenomenon",korean:"현상",pos:"noun",example:"A natural phenomenon.",korExample:"자연 현상입니다."},
                     {id:3,english:"fundamental",korean:"근본적인",pos:"adjective",example:"A fundamental principle.",korExample:"근본적인 원칙입니다."},
                     {id:4,english:"aspect",korean:"측면",pos:"noun",example:"Consider every aspect.",korExample:"모든 측면을 고려하세요."},
-                    {id:5,english:"approach",korean:"접근법",pos:"noun",example:"A different approach.",korExample:"다른 접근법입니다."}
+                    {id:5,english:"approach",korean:"접근법",pos:"noun",example:"A different approach.",korExample:"다른 접근법입니다."},
+                    {id:6,english:"perspective",korean:"관점",pos:"noun",example:"From my perspective.",korExample:"제 관점에서는요."},
+                    {id:7,english:"constitute",korean:"구성하다",pos:"verb",example:"These constitute the whole.",korExample:"이것들이 전체를 구성합니다."},
+                    {id:8,english:"implement",korean:"시행하다",pos:"verb",example:"Implement the plan.",korExample:"계획을 시행하세요."},
+                    {id:9,english:"enhance",korean:"향상시키다",pos:"verb",example:"Enhance your skills.",korExample:"기술을 향상시키세요."},
+                    {id:10,english:"demonstrate",korean:"입증하다",pos:"verb",example:"Demonstrate your ability.",korExample:"능력을 입증하세요."},
+                    {id:11,english:"significant",korean:"중요한",pos:"adjective",example:"A significant change.",korExample:"중요한 변화입니다."},
+                    {id:12,english:"sufficient",korean:"충분한",pos:"adjective",example:"Sufficient evidence.",korExample:"충분한 증거입니다."},
+                    {id:13,english:"comprehensive",korean:"포괄적인",pos:"adjective",example:"A comprehensive review.",korExample:"포괄적인 검토입니다."},
+                    {id:14,english:"diverse",korean:"다양한",pos:"adjective",example:"Diverse opinions.",korExample:"다양한 의견들입니다."},
+                    {id:15,english:"explicit",korean:"명시적인",pos:"adjective",example:"Explicit instructions.",korExample:"명시적인 지시사항입니다."},
+                    {id:16,english:"inevitable",korean:"불가피한",pos:"adjective",example:"An inevitable result.",korExample:"불가피한 결과입니다."},
+                    {id:17,english:"prominent",korean:"두드러진",pos:"adjective",example:"A prominent figure.",korExample:"두드러진 인물입니다."},
+                    {id:18,english:"substantial",korean:"상당한",pos:"adjective",example:"Substantial progress.",korExample:"상당한 진전입니다."},
+                    {id:19,english:"tentative",korean:"잠정적인",pos:"adjective",example:"A tentative plan.",korExample:"잠정적인 계획입니다."},
+                    {id:20,english:"arbitrary",korean:"임의적인",pos:"adjective",example:"An arbitrary decision.",korExample:"임의적인 결정입니다."},
+                    {id:21,english:"acknowledge",korean:"인정하다",pos:"verb",example:"Acknowledge the truth.",korExample:"진실을 인정하세요."},
+                    {id:22,english:"anticipate",korean:"예상하다",pos:"verb",example:"Anticipate problems.",korExample:"문제를 예상하세요."},
+                    {id:23,english:"comprehend",korean:"이해하다",pos:"verb",example:"Comprehend the concept.",korExample:"개념을 이해하세요."},
+                    {id:24,english:"discern",korean:"식별하다",pos:"verb",example:"Discern the difference.",korExample:"차이를 식별하세요."},
+                    {id:25,english:"elaborate",korean:"상세히 설명하다",pos:"verb",example:"Elaborate on your idea.",korExample:"아이디어를 상세히 설명하세요."},
+                    {id:26,english:"formulate",korean:"공식화하다",pos:"verb",example:"Formulate a strategy.",korExample:"전략을 공식화하세요."},
+                    {id:27,english:"initiate",korean:"시작하다",pos:"verb",example:"Initiate the process.",korExample:"과정을 시작하세요."},
+                    {id:28,english:"manipulate",korean:"조작하다",pos:"verb",example:"Manipulate the data.",korExample:"데이터를 조작하다."},
+                    {id:29,english:"perceive",korean:"인식하다",pos:"verb",example:"Perceive the reality.",korExample:"현실을 인식하세요."},
+                    {id:30,english:"refine",korean:"개선하다",pos:"verb",example:"Refine your technique.",korExample:"기술을 개선하세요."},
+                    {id:31,english:"synthesis",korean:"종합",pos:"noun",example:"A synthesis of ideas.",korExample:"아이디어의 종합입니다."},
+                    {id:32,english:"proportion",korean:"비율",pos:"noun",example:"The right proportion.",korExample:"올바른 비율입니다."},
+                    {id:33,english:"criterion",korean:"기준",pos:"noun",example:"Meet the criterion.",korExample:"기준을 충족하세요."},
+                    {id:34,english:"hypothesis",korean:"가설",pos:"noun",example:"Test the hypothesis.",korExample:"가설을 검증하세요."},
+                    {id:35,english:"context",korean:"맥락",pos:"noun",example:"Understand the context.",korExample:"맥락을 이해하세요."}
                 ],
                 2: [
                     {id:1,english:"infrastructure",korean:"기반시설",pos:"noun",example:"Build infrastructure.",korExample:"기반시설을 건설하세요."},
                     {id:2,english:"sovereignty",korean:"주권",pos:"noun",example:"National sovereignty.",korExample:"국가 주권입니다."},
                     {id:3,english:"authenticity",korean:"진정성",pos:"noun",example:"Question its authenticity.",korExample:"진정성을 의심하세요."},
                     {id:4,english:"designation",korean:"지정",pos:"noun",example:"Official designation.",korExample:"공식 지정입니다."},
-                    {id:5,english:"equilibrium",korean:"균형",pos:"noun",example:"Maintain equilibrium.",korExample:"균형을 유지하세요."}
+                    {id:5,english:"equilibrium",korean:"균형",pos:"noun",example:"Maintain equilibrium.",korExample:"균형을 유지하세요."},
+                    {id:6,english:"proliferation",korean:"확산",pos:"noun",example:"Nuclear proliferation.",korExample:"핵 확산입니다."},
+                    {id:7,english:"predecessor",korean:"전임자",pos:"noun",example:"My predecessor left.",korExample:"제 전임자가 떠났습니다."},
+                    {id:8,english:"counterpart",korean:"상대방",pos:"noun",example:"Meet your counterpart.",korExample:"상대방을 만나세요."},
+                    {id:9,english:"ambiguity",korean:"모호함",pos:"noun",example:"Remove the ambiguity.",korExample:"모호함을 제거하세요."},
+                    {id:10,english:"encompass",korean:"포함하다",pos:"verb",example:"Encompass all aspects.",korExample:"모든 측면을 포함하세요."},
+                    {id:11,english:"facilitate",korean:"촉진하다",pos:"verb",example:"Facilitate discussion.",korExample:"토론을 촉진하세요."},
+                    {id:12,english:"substantiate",korean:"입증하다",pos:"verb",example:"Substantiate your claim.",korExample:"주장을 입증하세요."},
+                    {id:13,english:"differentiate",korean:"구별하다",pos:"verb",example:"Differentiate between them.",korExample:"그것들을 구별하세요."},
+                    {id:14,english:"consolidate",korean:"통합하다",pos:"verb",example:"Consolidate power.",korExample:"권력을 통합하세요."},
+                    {id:15,english:"deteriorate",korean:"악화되다",pos:"verb",example:"Conditions deteriorate.",korExample:"상황이 악화됩니다."},
+                    {id:16,english:"perpetuate",korean:"영속화하다",pos:"verb",example:"Perpetuate the tradition.",korExample:"전통을 영속화하세요."},
+                    {id:17,english:"subordinate",korean:"종속시키다",pos:"verb",example:"Subordinate to authority.",korExample:"권위에 종속시키다."},
+                    {id:18,english:"prevalent",korean:"만연한",pos:"adjective",example:"A prevalent belief.",korExample:"만연한 믿음입니다."},
+                    {id:19,english:"coherent",korean:"일관된",pos:"adjective",example:"A coherent argument.",korExample:"일관된 주장입니다."},
+                    {id:20,english:"ambiguous",korean:"애매한",pos:"adjective",example:"An ambiguous answer.",korExample:"애매한 답변입니다."},
+                    {id:21,english:"plausible",korean:"그럴듯한",pos:"adjective",example:"A plausible explanation.",korExample:"그럴듯한 설명입니다."},
+                    {id:22,english:"rigorous",korean:"엄격한",pos:"adjective",example:"Rigorous standards.",korExample:"엄격한 기준입니다."},
+                    {id:23,english:"obsolete",korean:"쓸모없는",pos:"adjective",example:"Obsolete technology.",korExample:"쓸모없는 기술입니다."},
+                    {id:24,english:"concurrent",korean:"동시의",pos:"adjective",example:"Concurrent events.",korExample:"동시의 사건들입니다."},
+                    {id:25,english:"intrinsic",korean:"본질적인",pos:"adjective",example:"Intrinsic value.",korExample:"본질적인 가치입니다."},
+                    {id:26,english:"inherent",korean:"내재된",pos:"adjective",example:"Inherent risk.",korExample:"내재된 위험입니다."},
+                    {id:27,english:"preliminary",korean:"예비의",pos:"adjective",example:"Preliminary results.",korExample:"예비 결과입니다."},
+                    {id:28,english:"terminology",korean:"용어",pos:"noun",example:"Technical terminology.",korExample:"기술 용어입니다."},
+                    {id:29,english:"analogy",korean:"유추",pos:"noun",example:"Draw an analogy.",korExample:"유추를 하세요."},
+                    {id:30,english:"entity",korean:"실체",pos:"noun",example:"A legal entity.",korExample:"법적 실체입니다."},
+                    {id:31,english:"remnant",korean:"잔재",pos:"noun",example:"A remnant of the past.",korExample:"과거의 잔재입니다."},
+                    {id:32,english:"spectrum",korean:"범위",pos:"noun",example:"A wide spectrum.",korExample:"넓은 범위입니다."},
+                    {id:33,english:"excerpt",korean:"발췌",pos:"noun",example:"An excerpt from a book.",korExample:"책에서의 발췌입니다."},
+                    {id:34,english:"notion",korean:"개념",pos:"noun",example:"A vague notion.",korExample:"모호한 개념입니다."},
+                    {id:35,english:"doctrine",korean:"교리",pos:"noun",example:"Religious doctrine.",korExample:"종교적 교리입니다."}
                 ],
                 3: [
                     {id:1,english:"disposition",korean:"성향",pos:"noun",example:"A cheerful disposition.",korExample:"쾌활한 성향입니다."},
                     {id:2,english:"inclination",korean:"경향",pos:"noun",example:"A natural inclination.",korExample:"자연스러운 경향입니다."},
                     {id:3,english:"integrity",korean:"완전성",pos:"noun",example:"Structural integrity.",korExample:"구조적 완전성입니다."},
                     {id:4,english:"constraint",korean:"제약",pos:"noun",example:"Budget constraints.",korExample:"예산 제약입니다."},
-                    {id:5,english:"implication",korean:"함의",pos:"noun",example:"The implication is clear.",korExample:"함의가 명확합니다."}
+                    {id:5,english:"implication",korean:"함의",pos:"noun",example:"The implication is clear.",korExample:"함의가 명확합니다."},
+                    {id:6,english:"manifestation",korean:"표출",pos:"noun",example:"A manifestation of fear.",korExample:"두려움의 표출입니다."},
+                    {id:7,english:"proposition",korean:"제안",pos:"noun",example:"An interesting proposition.",korExample:"흥미로운 제안입니다."},
+                    {id:8,english:"discourse",korean:"담론",pos:"noun",example:"Political discourse.",korExample:"정치적 담론입니다."},
+                    {id:9,english:"correlation",korean:"상관관계",pos:"noun",example:"A strong correlation.",korExample:"강한 상관관계입니다."},
+                    {id:10,english:"exacerbate",korean:"악화시키다",pos:"verb",example:"Exacerbate the problem.",korExample:"문제를 악화시키다."},
+                    {id:11,english:"alleviate",korean:"완화하다",pos:"verb",example:"Alleviate the pain.",korExample:"고통을 완화하세요."},
+                    {id:12,english:"ascertain",korean:"확인하다",pos:"verb",example:"Ascertain the facts.",korExample:"사실을 확인하세요."},
+                    {id:13,english:"circumvent",korean:"우회하다",pos:"verb",example:"Circumvent the rules.",korExample:"규칙을 우회하다."},
+                    {id:14,english:"corroborate",korean:"확증하다",pos:"verb",example:"Corroborate the story.",korExample:"이야기를 확증하세요."},
+                    {id:15,english:"elucidate",korean:"명료하게 하다",pos:"verb",example:"Elucidate the concept.",korExample:"개념을 명료하게 하세요."},
+                    {id:16,english:"extrapolate",korean:"추정하다",pos:"verb",example:"Extrapolate from data.",korExample:"데이터에서 추정하세요."},
+                    {id:17,english:"preclude",korean:"배제하다",pos:"verb",example:"Preclude the possibility.",korExample:"가능성을 배제하세요."},
+                    {id:18,english:"vindicate",korean:"정당화하다",pos:"verb",example:"Vindicate her decision.",korExample:"그녀의 결정을 정당화하세요."},
+                    {id:19,english:"convoluted",korean:"복잡한",pos:"adjective",example:"A convoluted argument.",korExample:"복잡한 주장입니다."},
+                    {id:20,english:"meticulous",korean:"꼼꼼한",pos:"adjective",example:"Meticulous attention.",korExample:"꼼꼼한 주의입니다."},
+                    {id:21,english:"pragmatic",korean:"실용적인",pos:"adjective",example:"A pragmatic approach.",korExample:"실용적인 접근법입니다."},
+                    {id:22,english:"redundant",korean:"불필요한",pos:"adjective",example:"Redundant information.",korExample:"불필요한 정보입니다."},
+                    {id:23,english:"tangible",korean:"실질적인",pos:"adjective",example:"Tangible results.",korExample:"실질적인 결과입니다."},
+                    {id:24,english:"unequivocal",korean:"명백한",pos:"adjective",example:"An unequivocal statement.",korExample:"명백한 진술입니다."},
+                    {id:25,english:"viable",korean:"실행 가능한",pos:"adjective",example:"A viable solution.",korExample:"실행 가능한 해결책입니다."},
+                    {id:26,english:"volatile",korean:"변동성이 큰",pos:"adjective",example:"A volatile market.",korExample:"변동성이 큰 시장입니다."},
+                    {id:27,english:"adept",korean:"능숙한",pos:"adjective",example:"Adept at negotiation.",korExample:"협상에 능숙합니다."},
+                    {id:28,english:"astute",korean:"기민한",pos:"adjective",example:"An astute observation.",korExample:"기민한 관찰입니다."},
+                    {id:29,english:"delineation",korean:"서술",pos:"noun",example:"Clear delineation.",korExample:"명확한 서술입니다."},
+                    {id:30,english:"dichotomy",korean:"이분법",pos:"noun",example:"A false dichotomy.",korExample:"잘못된 이분법입니다."},
+                    {id:31,english:"anomaly",korean:"이상현상",pos:"noun",example:"Statistical anomaly.",korExample:"통계적 이상현상입니다."},
+                    {id:32,english:"epitome",korean:"전형",pos:"noun",example:"The epitome of elegance.",korExample:"우아함의 전형입니다."},
+                    {id:33,english:"endeavor",korean:"노력",pos:"noun",example:"A worthy endeavor.",korExample:"가치 있는 노력입니다."},
+                    {id:34,english:"magnitude",korean:"규모",pos:"noun",example:"The magnitude is huge.",korExample:"규모가 엄청납니다."},
+                    {id:35,english:"threshold",korean:"문턱",pos:"noun",example:"Cross the threshold.",korExample:"문턱을 넘으세요."}
                 ],
                 4: [
                     {id:1,english:"benevolent",korean:"자비로운",pos:"adjective",example:"A benevolent leader.",korExample:"자비로운 지도자입니다."},
                     {id:2,english:"conscientious",korean:"성실한",pos:"adjective",example:"A conscientious worker.",korExample:"성실한 근로자입니다."},
                     {id:3,english:"diligent",korean:"부지런한",pos:"adjective",example:"A diligent student.",korExample:"부지런한 학생입니다."},
                     {id:4,english:"eloquent",korean:"웅변적인",pos:"adjective",example:"An eloquent speech.",korExample:"웅변적인 연설입니다."},
-                    {id:5,english:"fervent",korean:"열렬한",pos:"adjective",example:"Fervent support.",korExample:"열렬한 지지입니다."}
+                    {id:5,english:"fervent",korean:"열렬한",pos:"adjective",example:"Fervent support.",korExample:"열렬한 지지입니다."},
+                    {id:6,english:"gregarious",korean:"사교적인",pos:"adjective",example:"A gregarious person.",korExample:"사교적인 사람입니다."},
+                    {id:7,english:"tenacious",korean:"완강한",pos:"adjective",example:"Tenacious determination.",korExample:"완강한 결의입니다."},
+                    {id:8,english:"resilient",korean:"회복력있는",pos:"adjective",example:"A resilient economy.",korExample:"회복력있는 경제입니다."},
+                    {id:9,english:"scrupulous",korean:"세심한",pos:"adjective",example:"Scrupulous attention.",korExample:"세심한 주의입니다."},
+                    {id:10,english:"judicious",korean:"현명한",pos:"adjective",example:"A judicious decision.",korExample:"현명한 결정입니다."},
+                    {id:11,english:"reciprocate",korean:"보답하다",pos:"verb",example:"Reciprocate the favor.",korExample:"호의에 보답하세요."},
+                    {id:12,english:"relinquish",korean:"포기하다",pos:"verb",example:"Relinquish control.",korExample:"통제를 포기하세요."},
+                    {id:13,english:"scrutinize",korean:"정밀조사하다",pos:"verb",example:"Scrutinize the document.",korExample:"문서를 정밀조사하세요."},
+                    {id:14,english:"stipulate",korean:"규정하다",pos:"verb",example:"Stipulate the terms.",korExample:"조건을 규정하세요."},
+                    {id:15,english:"supersede",korean:"대체하다",pos:"verb",example:"Supersede old rules.",korExample:"기존 규칙을 대체하세요."},
+                    {id:16,english:"transcend",korean:"초월하다",pos:"verb",example:"Transcend limitations.",korExample:"한계를 초월하세요."},
+                    {id:17,english:"undermine",korean:"훼손하다",pos:"verb",example:"Undermine authority.",korExample:"권위를 훼손하다."},
+                    {id:18,english:"advocate",korean:"옹호하다",pos:"verb",example:"Advocate for change.",korExample:"변화를 옹호하세요."},
+                    {id:19,english:"articulate",korean:"명확히 표현하다",pos:"verb",example:"Articulate your vision.",korExample:"비전을 명확히 표현하세요."},
+                    {id:20,english:"ambivalence",korean:"양가감정",pos:"noun",example:"Feel ambivalence.",korExample:"양가감정을 느낍니다."},
+                    {id:21,english:"complacency",korean:"자기만족",pos:"noun",example:"Avoid complacency.",korExample:"자기만족을 피하세요."},
+                    {id:22,english:"discrepancy",korean:"불일치",pos:"noun",example:"A discrepancy exists.",korExample:"불일치가 존재합니다."},
+                    {id:23,english:"precedent",korean:"전례",pos:"noun",example:"Set a precedent.",korExample:"전례를 남기세요."},
+                    {id:24,english:"ramification",korean:"파급효과",pos:"noun",example:"Consider ramifications.",korExample:"파급효과를 고려하세요."},
+                    {id:25,english:"synopsis",korean:"개요",pos:"noun",example:"Read the synopsis.",korExample:"개요를 읽으세요."},
+                    {id:26,english:"tenure",korean:"재임기간",pos:"noun",example:"During his tenure.",korExample:"그의 재임기간 동안입니다."},
+                    {id:27,english:"trajectory",korean:"궤적",pos:"noun",example:"Career trajectory.",korExample:"경력 궤적입니다."},
+                    {id:28,english:"acumen",korean:"통찰력",pos:"noun",example:"Business acumen.",korExample:"사업 통찰력입니다."},
+                    {id:29,english:"catalyst",korean:"촉매",pos:"noun",example:"A catalyst for change.",korExample:"변화의 촉매입니다."},
+                    {id:30,english:"negligible",korean:"무시할 만한",pos:"adjective",example:"Negligible difference.",korExample:"무시할 만한 차이입니다."},
+                    {id:31,english:"mundane",korean:"평범한",pos:"adjective",example:"Mundane tasks.",korExample:"평범한 업무입니다."},
+                    {id:32,english:"pervasive",korean:"만연한",pos:"adjective",example:"Pervasive influence.",korExample:"만연한 영향입니다."},
+                    {id:33,english:"dormant",korean:"휴면상태의",pos:"adjective",example:"Dormant volcano.",korExample:"휴면상태의 화산입니다."},
+                    {id:34,english:"imminent",korean:"임박한",pos:"adjective",example:"Imminent danger.",korExample:"임박한 위험입니다."},
+                    {id:35,english:"pivotal",korean:"중추적인",pos:"adjective",example:"A pivotal moment.",korExample:"중추적인 순간입니다."},
+                    {id:36,english:"sporadic",korean:"산발적인",pos:"adjective",example:"Sporadic outbreaks.",korExample:"산발적인 발병입니다."},
+                    {id:37,english:"transient",korean:"일시적인",pos:"adjective",example:"Transient phenomenon.",korExample:"일시적인 현상입니다."},
+                    {id:38,english:"ubiquitous",korean:"어디에나 있는",pos:"adjective",example:"Ubiquitous technology.",korExample:"어디에나 있는 기술입니다."},
+                    {id:39,english:"prudent",korean:"신중한",pos:"adjective",example:"A prudent approach.",korExample:"신중한 접근법입니다."},
+                    {id:40,english:"fortuitous",korean:"우연한",pos:"adjective",example:"A fortuitous encounter.",korExample:"우연한 만남입니다."}
                 ],
                 5: [
                     {id:1,english:"ameliorate",korean:"개선하다",pos:"verb",example:"Ameliorate conditions.",korExample:"상황을 개선하세요."},
                     {id:2,english:"obfuscate",korean:"모호하게 하다",pos:"verb",example:"Obfuscate the truth.",korExample:"진실을 모호하게 하다."},
                     {id:3,english:"eradicate",korean:"근절하다",pos:"verb",example:"Eradicate poverty.",korExample:"빈곤을 근절하세요."},
                     {id:4,english:"mitigate",korean:"완화하다",pos:"verb",example:"Mitigate the impact.",korExample:"영향을 완화하세요."},
-                    {id:5,english:"proliferate",korean:"급증하다",pos:"verb",example:"Weapons proliferate.",korExample:"무기가 급증합니다."}
+                    {id:5,english:"proliferate",korean:"급증하다",pos:"verb",example:"Weapons proliferate.",korExample:"무기가 급증합니다."},
+                    {id:6,english:"disseminate",korean:"보급하다",pos:"verb",example:"Disseminate information.",korExample:"정보를 보급하세요."},
+                    {id:7,english:"orchestrate",korean:"조직하다",pos:"verb",example:"Orchestrate a campaign.",korExample:"운동을 조직하세요."},
+                    {id:8,english:"repudiate",korean:"거부하다",pos:"verb",example:"Repudiate the claim.",korExample:"주장을 거부하세요."},
+                    {id:9,english:"reconcile",korean:"조화시키다",pos:"verb",example:"Reconcile differences.",korExample:"차이를 조화시키세요."},
+                    {id:10,english:"galvanize",korean:"자극하다",pos:"verb",example:"Galvanize support.",korExample:"지지를 자극하세요."},
+                    {id:11,english:"epitomize",korean:"전형이다",pos:"verb",example:"Epitomize excellence.",korExample:"우수성의 전형입니다."},
+                    {id:12,english:"substantive",korean:"실질적인",pos:"adjective",example:"Substantive change.",korExample:"실질적인 변화입니다."},
+                    {id:13,english:"egregious",korean:"지독한",pos:"adjective",example:"An egregious error.",korExample:"지독한 오류입니다."},
+                    {id:14,english:"flagrant",korean:"노골적인",pos:"adjective",example:"Flagrant violation.",korExample:"노골적인 위반입니다."},
+                    {id:15,english:"insidious",korean:"교활한",pos:"adjective",example:"An insidious threat.",korExample:"교활한 위협입니다."},
+                    {id:16,english:"inveterate",korean:"뿌리 깊은",pos:"adjective",example:"An inveterate habit.",korExample:"뿌리 깊은 습관입니다."},
+                    {id:17,english:"incorrigible",korean:"교정 불가능한",pos:"adjective",example:"Incorrigible behavior.",korExample:"교정 불가능한 행동입니다."},
+                    {id:18,english:"recalcitrant",korean:"완강한",pos:"adjective",example:"A recalcitrant attitude.",korExample:"완강한 태도입니다."},
+                    {id:19,english:"intransigent",korean:"타협하지 않는",pos:"adjective",example:"Intransigent position.",korExample:"타협하지 않는 입장입니다."},
+                    {id:20,english:"obdurate",korean:"완고한",pos:"adjective",example:"An obdurate refusal.",korExample:"완고한 거부입니다."},
+                    {id:21,english:"tenuous",korean:"희박한",pos:"adjective",example:"A tenuous connection.",korExample:"희박한 연결입니다."},
+                    {id:22,english:"perfunctory",korean:"형식적인",pos:"adjective",example:"Perfunctory effort.",korExample:"형식적인 노력입니다."},
+                    {id:23,english:"desultory",korean:"산만한",pos:"adjective",example:"Desultory conversation.",korExample:"산만한 대화입니다."},
+                    {id:24,english:"ephemeral",korean:"덧없는",pos:"adjective",example:"Ephemeral beauty.",korExample:"덧없는 아름다움입니다."},
+                    {id:25,english:"pernicious",korean:"해로운",pos:"adjective",example:"Pernicious influence.",korExample:"해로운 영향입니다."},
+                    {id:26,english:"inscrutable",korean:"불가해한",pos:"adjective",example:"An inscrutable expression.",korExample:"불가해한 표정입니다."},
+                    {id:27,english:"audacious",korean:"대담한",pos:"adjective",example:"An audacious plan.",korExample:"대담한 계획입니다."},
+                    {id:28,english:"proclivity",korean:"성벽",pos:"noun",example:"A proclivity for risk.",korExample:"위험에 대한 성벽입니다."},
+                    {id:29,english:"propensity",korean:"성향",pos:"noun",example:"A propensity to err.",korExample:"실수하는 성향입니다."},
+                    {id:30,english:"predilection",korean:"편애",pos:"noun",example:"A predilection for art.",korExample:"예술에 대한 편애입니다."},
+                    {id:31,english:"antithesis",korean:"정반대",pos:"noun",example:"The antithesis of good.",korExample:"선의 정반대입니다."},
+                    {id:32,english:"juxtaposition",korean:"병치",pos:"noun",example:"An interesting juxtaposition.",korExample:"흥미로운 병치입니다."},
+                    {id:33,english:"polarization",korean:"양극화",pos:"noun",example:"Political polarization.",korExample:"정치적 양극화입니다."},
+                    {id:34,english:"hegemony",korean:"패권",pos:"noun",example:"Cultural hegemony.",korExample:"문화적 패권입니다."},
+                    {id:35,english:"platitude",korean:"진부한 말",pos:"noun",example:"Empty platitudes.",korExample:"공허한 진부한 말입니다."},
+                    {id:36,english:"quandary",korean:"곤경",pos:"noun",example:"In a quandary.",korExample:"곤경에 처했습니다."},
+                    {id:37,english:"conundrum",korean:"난제",pos:"noun",example:"A difficult conundrum.",korExample:"어려운 난제입니다."},
+                    {id:38,english:"vicissitude",korean:"변천",pos:"noun",example:"Life's vicissitudes.",korExample:"인생의 변천입니다."},
+                    {id:39,english:"harbinger",korean:"전조",pos:"noun",example:"A harbinger of change.",korExample:"변화의 전조입니다."},
+                    {id:40,english:"confluence",korean:"합류",pos:"noun",example:"A confluence of events.",korExample:"사건들의 합류입니다."}
                 ]
             };
         }
@@ -1242,34 +1203,42 @@ function loadLevelData() {
 
         function selectMCAnswer(selected, correct, idx) {
             const question = currentQuestions[currentQuestionIndex];
+            if (answered) return;
+
             const isCorrect = selected === correct;
-            
-            if (!answered && isCorrect) {
-                answered = true;
+            answered = true;
+
+            if (isCorrect) {
                 score++;
                 recordAnswer(question.id, question.english, question.korean, true);
-            } else if (!answered) {
+            } else {
                 recordAnswer(question.id, question.english, question.korean, false);
             }
 
             const choiceBtns = document.querySelectorAll('.choice-btn');
-            choiceBtns[idx].classList.add('selected', isCorrect ? 'correct' : 'incorrect');
+            // 모든 버튼 비활성화하고 정답/오답 상태 표시
+            choiceBtns.forEach(function(btn, i) {
+                btn.disabled = true;
+                if (btn.textContent === correct) {
+                    btn.classList.add('selected', 'correct');
+                }
+            });
 
+            // 선택한 버튼은 틀렸다면 빨간 표시
+            if (!isCorrect) {
+                choiceBtns[idx].classList.add('selected', 'incorrect');
+            }
+
+            const feedback = document.getElementById('mcFeedback');
             if (isCorrect) {
-                choiceBtns.forEach(function(btn) { btn.disabled = true; });
-                const feedback = document.getElementById('mcFeedback');
                 feedback.textContent = '✓ 정답입니다!';
                 feedback.classList.add('show', 'correct');
-                document.getElementById('mcNextBtn').disabled = false;
             } else {
-                const feedback = document.getElementById('mcFeedback');
-                feedback.textContent = '✗ 다시 선택해주세요.';
+                feedback.textContent = '✗ 오답입니다. 정답: ' + correct;
                 feedback.classList.add('show', 'incorrect');
-                setTimeout(function() {
-                    choiceBtns[idx].classList.remove('selected', 'incorrect');
-                    feedback.classList.remove('show', 'incorrect');
-                }, 800);
             }
+
+            document.getElementById('mcNextBtn').disabled = false;
         }
 
         function nextMCQuestion() {
@@ -1364,23 +1333,17 @@ function loadLevelData() {
             const userAnswer = inputBoxes.map(function(box) { return box.value; }).join('');
             const isCorrect = userAnswer === question.korean;
 
-            // 항상 한 번만 기록하도록 보장
+            if (isCorrect) score++;
+
             recordAnswer(question.id, question.english, question.korean, isCorrect);
 
-            if (isCorrect) {
-                score++;
-            }
-
-            // 결과 표시: 입력란 비활성화 및 정답/오답 표시
             inputBoxes.forEach(function(box, idx) {
                 box.disabled = true;
-                const correctChar = question.korean[idx] || '';
-                if (box.value === correctChar) {
+                if (userAnswer[idx] === question.korean[idx]) {
                     box.classList.add('correct');
                 } else {
-                    // 오답이면 올바른 글자를 사용자에게 보여줌
                     box.classList.add('incorrect');
-                    box.value = correctChar;
+                    // 원복: 사용자가 입력한 글자를 덮어쓰지 않음 (정답 글자로 바꾸지 않음)
                 }
             });
 
@@ -1388,7 +1351,6 @@ function loadLevelData() {
             feedback.textContent = isCorrect ? '✓ 정답입니다!' : '✗ 오답입니다. 정답: ' + question.korean;
             feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
 
-            // 제출 버튼 숨기고 다음 버튼 활성화 — 오답이어도 다음으로 진행 가능
             const tpSubmitBtn = document.getElementById('tpSubmitBtn');
             const tpNextBtn = document.getElementById('tpNextBtn');
             if (tpSubmitBtn) {
