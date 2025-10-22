@@ -18,11 +18,11 @@ function loadProgressFromStorage() {
 }
 
 /**
- * 진행 상황 초기화
+ * 진행 상황 초기화 (Level 1-20)
  */
 function initializeProgress() {
     window.progress = { levels: {} };
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 20; i++) {  // 5 → 20으로 변경
         window.progress.levels[i] = {
             mcPassed: false,      // Multiple Choice 통과 여부
             tpPassed: false,      // Typing Practice 통과 여부

@@ -62,22 +62,23 @@ body {
     cursor: not-allowed;
 }
 
-/* ========== 레벨 아이콘 ========== */
+/* ========== 레벨 아이콘 (공통) ========== */
 .level-icon {
     width: 60px;
     height: 60px;
     margin: 0 auto 15px;
     position: relative;
-}
-
-/* 고양이 아이콘 */
-.level-icon.cat {
-    background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
     border-radius: 50%;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* ========== Level 1-5 (기존 아이콘) ========== */
+
+/* 고양이 아이콘 (Level 1) */
+.level-icon.cat {
+    background: linear-gradient(135deg, #ff9a56 0%, #ff6b6b 100%);
 }
 
 .level-icon.cat::before {
@@ -86,14 +87,9 @@ body {
     position: absolute;
 }
 
-/* 공주 아이콘 */
+/* 공주 아이콘 (Level 2) */
 .level-icon.princess {
     background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-    border-radius: 50%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
 }
 
@@ -103,14 +99,9 @@ body {
     position: absolute;
 }
 
-/* 늑대 아이콘 */
+/* 늑대 아이콘 (Level 3) */
 .level-icon.wolf {
     background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-    border-radius: 50%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .level-icon.wolf::before {
@@ -119,14 +110,9 @@ body {
     position: absolute;
 }
 
-/* 커피 아이콘 */
+/* 커피 아이콘 (Level 4) */
 .level-icon.coffee {
     background: linear-gradient(135deg, #d4a574 0%, #8b6f47 100%);
-    border-radius: 50%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .level-icon.coffee::before {
@@ -164,18 +150,186 @@ body {
     transform: translateX(-50%);
 }
 
-/* 스니치 아이콘 */
+/* 토끼 아이콘 (Level 5) */
 .level-icon.snitch {
-    background: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%);
-    border-radius: 50%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible;
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
 }
 
 .level-icon.snitch::before {
+    content: '🐰';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* ========== Level 6-20 (해리포터 테마 이모지) ========== */
+
+/* Level 6: 마법지팡이 */
+.level-icon.book {
+    background: linear-gradient(135deg, #8b4513 0%, #654321 100%);
+}
+
+.level-icon.book::before {
+    content: '🪄';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 7: 마법책 */
+.level-icon.briefcase {
+    background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
+}
+
+.level-icon.briefcase::before {
+    content: '📖';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 8: 마법사 */
+.level-icon.scale {
+    background: linear-gradient(135deg, #4b0082 0%, #8a2be2 100%);
+}
+
+.level-icon.scale::before {
+    content: '🧙';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 9: 호그와트 성 */
+.level-icon.newspaper {
+    background: linear-gradient(135deg, #2f4f4f 0%, #696969 100%);
+}
+
+.level-icon.newspaper::before {
+    content: '🏰';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 10: 그리핀도르 사자 */
+.level-icon.globe {
+    background: linear-gradient(135deg, #740001 0%, #ae0001 100%);
+    box-shadow: 0 5px 15px rgba(174, 0, 1, 0.4);
+}
+
+.level-icon.globe::before {
+    content: '🦁';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 11: 슬리데린 뱀 */
+.level-icon.money {
+    background: linear-gradient(135deg, #1a472a 0%, #2a623d 100%);
+}
+
+.level-icon.money::before {
+    content: '🐍';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 12: 래번클로 독수리 */
+.level-icon.microscope {
+    background: linear-gradient(135deg, #0e1a40 0%, #222f5b 100%);
+}
+
+.level-icon.microscope::before {
+    content: '🦅';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 13: 후플푸프 오소리 */
+.level-icon.government {
+    background: linear-gradient(135deg, #ecb939 0%, #f0c75e 100%);
+}
+
+.level-icon.government::before {
+    content: '🦡';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 14: 현자의 돌 (1편) */
+.level-icon.chart {
+    background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+    box-shadow: 0 5px 15px rgba(220, 20, 60, 0.5);
+}
+
+.level-icon.chart::before {
+    content: '💎';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 15: 비밀 일기 (2편) */
+.level-icon.plant {
+    background: linear-gradient(135deg, #2f4f4f 0%, #000000 100%);
+}
+
+.level-icon.plant::before {
+    content: '📔';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 16: 늑대인간 (3편) */
+.level-icon.palette {
+    background: linear-gradient(135deg, #4a4a4a 0%, #2c2c2c 100%);
+}
+
+.level-icon.palette::before {
+    content: '🐺';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 17: 트라이위저드 컵 (4편) */
+.level-icon.literature {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+}
+
+.level-icon.literature::before {
+    content: '🏆';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 18: 예언의 구슬 (5편) */
+.level-icon.brain {
+    background: linear-gradient(135deg, #4169e1 0%, #1e90ff 100%);
+    box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
+}
+
+.level-icon.brain::before {
+    content: '🔮';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 19: 행운의 물약 (6편) */
+.level-icon.graduation {
+    background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+}
+
+.level-icon.graduation::before {
+    content: '⚗️';
+    font-size: 35px;
+    position: absolute;
+}
+
+/* Level 20: 스니치 (최종 보스) */
+.level-icon.scroll {
+    background: linear-gradient(135deg, #87ceeb 0%, #4682b4 100%);
+    box-shadow: 0 5px 15px rgba(135, 206, 235, 0.5);
+    overflow: visible;
+}
+
+.level-icon.scroll::before {
     content: '';
     position: absolute;
     width: 15px;
@@ -194,7 +348,7 @@ body {
         0 0 10px rgba(255, 215, 0, 0.6);
 }
 
-.level-icon.snitch::after {
+.level-icon.scroll::after {
     content: '🧹';
     font-size: 28px;
     position: absolute;

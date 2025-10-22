@@ -2,7 +2,7 @@
 
 /**
  * 모드 시작
- * @param {number} level - 레벨 번호 (1-5)
+ * @param {number} level - 레벨 번호 (1-20)
  * @param {string} mode - 모드 ('mc' 또는 'tp')
  */
 function startMode(level, mode) {
@@ -52,15 +52,31 @@ function displayMCQuestion() {
     document.getElementById('koreanWord').textContent = question.korean;
     document.getElementById('mcExampleSentence').textContent = question.korExample;
 
-    // 선택지 생성
+    // 선택지 생성 (같은 품사끼리만)
     const answers = [question.english];
-    const otherWords = currentQuestions.filter(function(q) { return q.id !== question.id; });
-    while (answers.length < 4) {
-        const randomWord = otherWords[Math.floor(Math.random() * otherWords.length)].english;
-        if (answers.indexOf(randomWord) === -1) {
-            answers.push(randomWord);
+    const samePosList = currentQuestions.filter(function(q) { 
+        return q.id !== question.id && q.pos === question.pos; 
+    });
+    
+    // 같은 품사가 3개 미만이면 다른 품사도 포함
+    if (samePosList.length < 3) {
+        const otherWords = currentQuestions.filter(function(q) { return q.id !== question.id; });
+        while (answers.length < 4 && otherWords.length > 0) {
+            const randomIndex = Math.floor(Math.random() * otherWords.length);
+            const randomWord = otherWords[randomIndex].english;
+            if (answers.indexOf(randomWord) === -1) {
+                answers.push(randomWord);
+            }
+        }
+    } else {
+        // 같은 품사에서 3개 선택
+        const shuffledSamePos = samePosList.slice().sort(function() { return Math.random() - 0.5; });
+        for (let i = 0; i < shuffledSamePos.length && answers.length < 4; i++) {
+            answers.push(shuffledSamePos[i].english);
         }
     }
+    
+    // 선택지 섞기
     answers.sort(function() { return Math.random() - 0.5; });
 
     // 선택지 버튼 생성

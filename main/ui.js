@@ -6,9 +6,32 @@
 function renderLevelSelection() {
     const levelGrid = document.getElementById('levelGrid');
     levelGrid.innerHTML = '';
-    const levelClasses = ['cat', 'princess', 'wolf', 'coffee', 'snitch'];
+    
+    // Level 1-20 아이콘 클래스명
+    const levelClasses = [
+        'cat',          // Level 1
+        'princess',     // Level 2
+        'wolf',         // Level 3
+        'coffee',       // Level 4
+        'snitch',       // Level 5
+        'book',         // Level 6
+        'briefcase',    // Level 7
+        'scale',        // Level 8
+        'newspaper',    // Level 9
+        'globe',        // Level 10
+        'money',        // Level 11
+        'microscope',   // Level 12
+        'government',   // Level 13
+        'chart',        // Level 14
+        'plant',        // Level 15
+        'palette',      // Level 16
+        'literature',   // Level 17
+        'brain',        // Level 18
+        'graduation',   // Level 19
+        'scroll'        // Level 20
+    ];
 
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 20; i++) {  // 5 → 20으로 변경
         const levelInfo = window.progress.levels[i];
         const isUnlocked = i === 1 || (window.progress.levels[i - 1].mcPassed && window.progress.levels[i - 1].tpPassed);
         
@@ -160,7 +183,7 @@ function updateStatsDisplay() {
     
     // 완료한 레벨 수 계산
     let completedLevels = 0;
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 20; i++) {  // 5 → 20으로 변경
         if (window.progress.levels[i].mcPassed && window.progress.levels[i].tpPassed) {
             completedLevels++;
         }
