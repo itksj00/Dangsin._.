@@ -31,7 +31,7 @@ function renderLevelSelection() {
         'scroll'        // Level 20
     ];
 
-    for (let i = 1; i <= 20; i++) {  // 5 → 20으로 변경
+    for (let i = 1; i <= 20; i++) {
         const levelInfo = window.progress.levels[i];
         const isUnlocked = i === 1 || (window.progress.levels[i - 1].mcPassed && window.progress.levels[i - 1].tpPassed);
         
@@ -177,13 +177,15 @@ function closeStatsModal() {
  * 통계 표시 업데이트
  */
 function updateStatsDisplay() {
-    const totalWords = window.stats.totalAttempts;
+    // 학습한 단어 수 (중복 제거)
+    const totalWords = window.stats.learnedWords ? Object.keys(window.stats.learnedWords).length : 0;
     const totalCorrect = window.stats.totalCorrect;
-    const accuracy = totalWords > 0 ? Math.round((totalCorrect / totalWords) * 100) : 0;
+    const totalAttempts = window.stats.totalAttempts;
+    const accuracy = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
     
     // 완료한 레벨 수 계산
     let completedLevels = 0;
-    for (let i = 1; i <= 20; i++) {  // 5 → 20으로 변경
+    for (let i = 1; i <= 20; i++) {
         if (window.progress.levels[i].mcPassed && window.progress.levels[i].tpPassed) {
             completedLevels++;
         }

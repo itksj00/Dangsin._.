@@ -22,7 +22,7 @@ function loadProgressFromStorage() {
  */
 function initializeProgress() {
     window.progress = { levels: {} };
-    for (let i = 1; i <= 20; i++) {  // 5 → 20으로 변경
+    for (let i = 1; i <= 20; i++) {
         window.progress.levels[i] = {
             mcPassed: false,      // Multiple Choice 통과 여부
             tpPassed: false,      // Typing Practice 통과 여부
@@ -53,12 +53,19 @@ function loadStatsFromStorage() {
         window.stats = {
             totalAttempts: 0,     // 총 시도한 문제 수
             totalCorrect: 0,      // 총 정답 수
+            learnedWords: {},     // 학습한 단어 추적 (key: "english|korean")
             mistakes: {}          // 틀린 단어 추적 (key: "english|korean")
         };
         saveStatsToStorage();
         return;
     }
     window.stats = JSON.parse(saved);
+    
+    // 이전 버전 호환성: learnedWords가 없으면 추가
+    if (!window.stats.learnedWords) {
+        window.stats.learnedWords = {};
+        saveStatsToStorage();
+    }
 }
 
 /**
@@ -78,11 +85,20 @@ function saveStatsToStorage() {
 function recordAnswer(questionId, english, korean, isCorrect) {
     window.stats.totalAttempts++;
     
+    // 학습한 단어로 등록 (중복 방지)
+    const key = english + '|' + korean;
+    if (!window.stats.learnedWords[key]) {
+        window.stats.learnedWords[key] = {
+            english: english,
+            korean: korean,
+            firstSeen: Date.now()
+        };
+    }
+    
     if (isCorrect) {
         window.stats.totalCorrect++;
     } else {
         // 틀린 단어 기록
-        const key = english + '|' + korean;
         if (!window.stats.mistakes[key]) {
             window.stats.mistakes[key] = {
                 english: english,
