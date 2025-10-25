@@ -1,6 +1,23 @@
 // ========== 퀴즈 로직 ==========
 
 /**
+ * 한글 단어 발음 재생 (Web Speech API)
+ * @param {string} text - 발음할 한글 텍스트
+ */
+function speakKorean(text) {
+    // 이전 발음 중지
+    speechSynthesis.cancel();
+    
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'ko-KR';  // 한국어 설정
+    utterance.rate = 0.85;      // 속도 (0.1 ~ 10)
+    utterance.pitch = 1;        // 음높이 (0 ~ 2)
+    utterance.volume = 1;       // 볼륨 (0 ~ 1)
+    
+    speechSynthesis.speak(utterance);
+}
+
+/**
  * 모드 시작
  * @param {number} level - 레벨 번호 (1-20)
  * @param {string} mode - 모드 ('mc' 또는 'tp')
@@ -48,8 +65,12 @@ function displayMCQuestion() {
     document.getElementById('mcNextBtn').disabled = true;
 
     const question = currentQuestions[currentQuestionIndex];
+    
+    // 한글 뜻 + 스피커 버튼
+    const koreanWithSpeaker = question.korean + ' <button class="speaker-btn" onclick="speakKorean(\'' + question.korean + '\'); event.stopPropagation();">🔊</button>';
+    
     document.getElementById('mcPosLabel').textContent = '(' + question.pos + ')';
-    document.getElementById('koreanWord').textContent = question.korean;
+    document.getElementById('koreanWord').innerHTML = koreanWithSpeaker;  // innerHTML으로 변경
     document.getElementById('mcExampleSentence').textContent = question.korExample;
 
     // 선택지 생성 (같은 품사끼리만)
@@ -195,8 +216,12 @@ function displayTPQuestion() {
     }
 
     const question = currentQuestions[currentQuestionIndex];
+    
+    // 영어 단어 + 스피커 버튼 (한글 발음)
+    const englishWithSpeaker = question.english + ' <button class="speaker-btn" onclick="speakKorean(\'' + question.korean + '\'); event.stopPropagation();">🔊</button>';
+    
     document.getElementById('posLabel').textContent = '(' + question.pos + ')';
-    document.getElementById('englishWord').textContent = question.english;
+    document.getElementById('englishWord').innerHTML = englishWithSpeaker;  // innerHTML으로 변경
     document.getElementById('exampleSentence').textContent = question.example;
 
     // 입력 박스 생성

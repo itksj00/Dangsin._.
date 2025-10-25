@@ -867,3 +867,25 @@ body {
 .close-stats-btn:hover {
     background: #2980b9;
 }
+/* ========== 스피커 버튼 스타일 ========== */
+
+.speaker-btn {
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+.speaker-btn:hover {
+    background: rgba(52, 152, 219, 0.1);
+    transform: scale(1.1);
+}
+
+.speaker-btn:active {
+    transform: scale(0.95);
+}
