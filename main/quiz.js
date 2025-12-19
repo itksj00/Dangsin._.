@@ -9,10 +9,10 @@ function speakKorean(text) {
     speechSynthesis.cancel();
     
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'ko-KR';  // 한국어 설정
-    utterance.rate = 0.85;      // 속도 (0.1 ~ 10)
-    utterance.pitch = 1;        // 음높이 (0 ~ 2)
-    utterance.volume = 1;       // 볼륨 (0 ~ 1)
+    utterance.lang = 'ko-KR';
+    utterance.rate = 0.85;
+    utterance.pitch = 1;
+    utterance.volume = 1;
     
     speechSynthesis.speak(utterance);
 }
@@ -70,7 +70,7 @@ function displayMCQuestion() {
     const koreanWithSpeaker = question.korean + ' <button class="speaker-btn" onclick="speakKorean(\'' + question.korean + '\'); event.stopPropagation();">🔊</button>';
     
     document.getElementById('mcPosLabel').textContent = '(' + question.pos + ')';
-    document.getElementById('koreanWord').innerHTML = koreanWithSpeaker;  // innerHTML으로 변경
+    document.getElementById('koreanWord').innerHTML = koreanWithSpeaker;
     document.getElementById('mcExampleSentence').textContent = question.korExample;
 
     // 선택지 생성 (같은 품사끼리만)
@@ -220,7 +220,7 @@ function displayTPQuestion() {
     document.getElementById('englishWord').textContent = question.english;
     document.getElementById('exampleSentence').textContent = question.example;
 
-    // ✅ 입력 박스 생성
+    // 입력 박스 생성
     const inputBoxes = document.getElementById('inputBoxes');
     inputBoxes.innerHTML = '';
     
@@ -230,39 +230,73 @@ function displayTPQuestion() {
         input.className = 'input-box';
         input.dataset.index = i;
         input.maxLength = 1;
-
+        
         let composing = false;
-
-        input.addEventListener('compositionstart', function () {
+        
+        // 조합 시작
+        input.addEventListener('compositionstart', function() {
             composing = true;
         });
-
-        input.addEventListener('compositionend', function (e) {
+        
+        // 조합 업데이트 (모바일에서 중요)
+        input.addEventListener('compositionupdate', function(e) {
+            composing = true;
+        });
+        
+        // 조합 완료
+        input.addEventListener('compositionend', function(e) {
             composing = false;
             const value = e.target.value;
-            if (value.length > 0 && i < question.korean.length - 1) {
-                inputBoxes.children[i + 1].focus();
+            
+            // 조합 완료 후 값 확인 및 다음 칸 이동
+            if (value && value.length > 0 && i < question.korean.length - 1) {
+                // 입력값이 있고 마지막 칸이 아니면 다음 칸으로 이동
+                setTimeout(function() {
+                    const nextInput = inputBoxes.children[i + 1];
+                    if (nextInput) {
+                        nextInput.focus();
+                    }
+                }, 50); // 타이밍을 50ms로 증가
             }
         });
 
-        // ✅ 모바일 대응 핵심: input 이벤트 기반 처리
-        input.addEventListener('input', function (e) {
-            if (composing) return;
-
-            const value = e.target.value;
-
-            if (value.length === 1 && i < question.korean.length - 1) {
-                inputBoxes.children[i + 1].focus();
+        // input 이벤트로 실시간 값 변경 감지
+        input.addEventListener('input', function(e) {
+            // 조합 중이 아니고 값이 있으면 다음 칸으로
+            if (!composing && e.target.value.length === 1 && i < question.korean.length - 1) {
+                setTimeout(function() {
+                    const nextInput = inputBoxes.children[i + 1];
+                    if (nextInput) {
+                        nextInput.focus();
+                    }
+                }, 10);
             }
         });
 
-        input.addEventListener('keydown', function (e) {
+        // 키 이벤트 처리
+        input.addEventListener('keydown', function(e) {
+            // 백스페이스: 이전 칸으로
             if (e.key === 'Backspace') {
                 if (input.value === '' && i > 0) {
                     e.preventDefault();
-                    inputBoxes.children[i - 1].focus();
+                    const prevInput = inputBoxes.children[i - 1];
+                    if (prevInput) {
+                        prevInput.focus();
+                    }
                 }
-            } else if (e.key === 'Enter') {
+            } 
+            // 스페이스바: 다음 칸으로 (조합 중이 아닐 때만)
+            else if (e.key === ' ' || e.key === 'Spacebar') {
+                e.preventDefault();
+                if (!composing && i < question.korean.length - 1) {
+                    const nextInput = inputBoxes.children[i + 1];
+                    if (nextInput) {
+                        nextInput.focus();
+                    }
+                }
+            }
+            // Enter: 제출
+            else if (e.key === 'Enter') {
                 e.preventDefault();
                 if (!answered && document.getElementById('tpSubmitBtn').style.display !== 'none') {
                     submitTypingPractice();
@@ -289,7 +323,12 @@ function submitTypingPractice() {
 
     const question = currentQuestions[currentQuestionIndex];
     const inputBoxes = Array.from(document.querySelectorAll('.input-box'));
-    const userAnswer = inputBoxes.map(function(box) { return box.value; }).join('');
+    
+    // 각 입력 박스의 값을 다시 한번 확인 (빈칸 문제 방지)
+    const userAnswer = inputBoxes.map(function(box) { 
+        return box.value.trim(); // trim으로 공백 제거
+    }).join('');
+    
     const isCorrect = userAnswer === question.korean;
 
     if (isCorrect) score++;
@@ -299,10 +338,18 @@ function submitTypingPractice() {
     // 입력 박스 상태 업데이트
     inputBoxes.forEach(function(box, idx) {
         box.disabled = true;
-        if (userAnswer[idx] === question.korean[idx]) {
+        const userChar = box.value.trim();
+        const correctChar = question.korean[idx];
+        
+        if (userChar === correctChar) {
             box.classList.add('correct');
         } else {
             box.classList.add('incorrect');
+            // 틀린 경우 정답 표시
+            if (!userChar) {
+                box.value = correctChar;
+                box.style.color = '#e74c3c';
+            }
         }
     });
 
