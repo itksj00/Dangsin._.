@@ -217,10 +217,10 @@ function displayTPQuestion() {
 
     const question = currentQuestions[currentQuestionIndex];
     document.getElementById('posLabel').textContent = '(' + question.pos + ')';
-    document.getElementById('englishWord').textContent = question.english;  // 스피커 버튼 제거
+    document.getElementById('englishWord').textContent = question.english;
     document.getElementById('exampleSentence').textContent = question.example;
 
-    // 입력 박스 생성
+    // ✅ 입력 박스 생성
     const inputBoxes = document.getElementById('inputBoxes');
     inputBoxes.innerHTML = '';
     
@@ -230,24 +230,33 @@ function displayTPQuestion() {
         input.className = 'input-box';
         input.dataset.index = i;
         input.maxLength = 1;
-        
+
         let composing = false;
-        
-        input.addEventListener('compositionstart', function() {
+
+        input.addEventListener('compositionstart', function () {
             composing = true;
         });
-        
-        input.addEventListener('compositionend', function(e) {
+
+        input.addEventListener('compositionend', function (e) {
             composing = false;
             const value = e.target.value;
-            if (value.length === 1 && i < question.korean.length - 1) {
-                setTimeout(function() {
-                    inputBoxes.children[i + 1].focus();
-                }, 0);
+            if (value.length > 0 && i < question.korean.length - 1) {
+                inputBoxes.children[i + 1].focus();
             }
         });
 
-        input.addEventListener('keydown', function(e) {
+        // ✅ 모바일 대응 핵심: input 이벤트 기반 처리
+        input.addEventListener('input', function (e) {
+            if (composing) return;
+
+            const value = e.target.value;
+
+            if (value.length === 1 && i < question.korean.length - 1) {
+                inputBoxes.children[i + 1].focus();
+            }
+        });
+
+        input.addEventListener('keydown', function (e) {
             if (e.key === 'Backspace') {
                 if (input.value === '' && i > 0) {
                     e.preventDefault();
